@@ -12,8 +12,20 @@
  **********************************************************************/
 
 import React from 'react';
+import { EntityFormProps } from 'src/types';
+
+type FormEntityData = {
+  entityType: EntityFormProps[];
+}
+
 const useEntityForm = () => {
-  const data: any = {};
+  let data: FormEntityData = {
+    entityType: [
+      { value: 'person', text: 'Person' },
+      { value: 'organization', text: 'Organization' },
+      { value: 'place', text: 'Place' },
+    ]
+  };
 
   const fns: any = {};
 

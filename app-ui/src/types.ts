@@ -13,17 +13,12 @@
  *
  **********************************************************************/
 
-
-
-
-
 export interface EntityFormProps {
   className?: any;
-  item: String;
-  index: Number;
+  index?: number;
+  value: string;
+  text: string;
 }
-
-
 
 
 export interface EntityContainerProps {
@@ -31,10 +26,6 @@ export interface EntityContainerProps {
 }
 
 
-
-
-
 export interface EntityInfoTableProps {
   className?: any;
 }
-
