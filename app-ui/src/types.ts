@@ -34,6 +34,7 @@
 
 
 
+
 export interface EntityContainerProps {
   className?: any;
 }
@@ -59,9 +60,11 @@ export interface EntityContainerProps {
 
 
 
+
 export interface EntityInfoTableProps {
   className?: any;
 }
+
 
 
 

@@ -39,7 +39,7 @@ const EntityContainer1: any = styled('div')({
   position: `relative`,
   isolation: `isolate`,
   flexDirection: `column`,
-  width: '100%',
+  width: 'fit-content',
   justifyContent: `flex-start`,
   alignItems: `flex-start`,
   padding: `0px`,
