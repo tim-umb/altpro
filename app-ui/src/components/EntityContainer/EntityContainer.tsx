@@ -34,6 +34,7 @@ import EntityForm from 'src/components/EntityForm/EntityForm';
 import { EntityContainerProps } from 'src/types';
 
 const EntityContainer1: any = styled('div')({
+  borderRadius: `6px`,
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
@@ -71,7 +72,9 @@ const ProfileContainer: any = styled('div')({
   boxSizing: `border-box`,
   alignSelf: `stretch`,
   flex: `1`,
+  zIndex: `4`,
   margin: `0px`,
+  width: '25%',
 });
 
 const CardHeader1: any = styled('div')(({ theme }: any) => ({
@@ -230,9 +233,8 @@ const EntityInfoTable1: any = styled(EntityInfoTable)(({ theme }: any) => ({
 }));
 
 const DividerVertical: any = styled(Divider)(({ theme }: any) => ({
-  alignSelf: `stretch`,
+  zIndex: `3`,
   margin: `0px`,
-  height: 'auto',
 }));
 
 const FormContainer: any = styled('div')({
@@ -244,8 +246,10 @@ const FormContainer: any = styled('div')({
   alignItems: `flex-start`,
   padding: `0px`,
   boxSizing: `border-box`,
-  width: '50%',
+  flex: `1`,
+  zIndex: `2`,
   margin: `0px`,
+  width: '50%',
 });
 
 const CardHeader2: any = styled('div')(({ theme }: any) => ({
@@ -372,7 +376,7 @@ const Card1: any = styled(Card)(({ theme }: any) => ({
 }));
 
 const DividerHorizontal1: any = styled(Divider)(({ theme }: any) => ({
-  width: `700px`,
+  alignSelf: `stretch`,
   margin: `0px`,
 }));
 
@@ -420,19 +424,17 @@ const Skeleton1: any = styled(Skeleton)(({ theme }: any) => ({
   alignSelf: `stretch`,
   height: `30px`,
   margin: `16px 0px 0px 0px`,
-  width: '100%',
 }));
 
 const Skeleton2: any = styled(Skeleton)(({ theme }: any) => ({
   alignSelf: `stretch`,
   height: `30px`,
   margin: `16px 0px 0px 0px`,
-  width: '100%',
 }));
 
 const Skeleton3: any = styled(Skeleton)(({ theme }: any) => ({
   height: `30px`,
-  width: '25%',
+  width: `160px`,
   margin: `16px 0px 0px 0px`,
 }));
 
@@ -453,8 +455,8 @@ const Card2: any = styled(Card)(({ theme }: any) => ({
 
 const DividerVertical1: any = styled(Divider)(({ theme }: any) => ({
   alignSelf: `stretch`,
+  zIndex: `1`,
   margin: `0px`,
-  height: 'auto',
 }));
 
 const InvestorContainer: any = styled('div')({
@@ -468,7 +470,9 @@ const InvestorContainer: any = styled('div')({
   boxSizing: `border-box`,
   alignSelf: `stretch`,
   flex: `1`,
+  zIndex: `0`,
   margin: `0px`,
+  width: '25%',
 });
 
 const CardHeader3: any = styled('div')(({ theme }: any) => ({
@@ -616,7 +620,7 @@ function EntityContainer(props: EntityContainerProps): JSX.Element {
             <EntityInfoTable1 />
           </Box1>
         </ProfileContainer>
-        <DividerVertical orientation="vertical" height={'auto'} />
+        <DividerVertical orientation="vertical" />
         <FormContainer>
           <CardHeader2>
             <AvatarWrapper>
@@ -658,31 +662,16 @@ function EntityContainer(props: EntityContainerProps): JSX.Element {
                     <Typography3 variant={'body1'} gutterBottom={false}>
                       {'Tax'}
                     </Typography3>
-                    <Skeleton1
-                      variant={'text'}
-                      width={604}
-                      height={30}
-                      width={'100%'}
-                    />
-                    <Skeleton2
-                      variant={'text'}
-                      width={604}
-                      height={30}
-                      width={'100%'}
-                    />
-                    <Skeleton3
-                      variant={'text'}
-                      width={160}
-                      height={30}
-                      width={'25%'}
-                    />
+                    <Skeleton1 variant={'rectangle'} width={370} height={30} />
+                    <Skeleton2 variant={'rectangle'} width={370} height={30} />
+                    <Skeleton3 variant={'rectangle'} width={160} height={30} />
                   </Stack1>
                 </CardContent2>
               </Card2>
             </FormContainer2>
           </FormTax>
         </FormContainer>
-        <DividerVertical1 orientation="vertical" height={'auto'} />
+        <DividerVertical1 orientation="vertical" />
         <InvestorContainer>
           <CardHeader3>
             <Content2>
