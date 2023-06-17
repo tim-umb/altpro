@@ -458,6 +458,7 @@ const DividerVertical1: any = styled(Divider)(({ theme }: any) => ({
   alignSelf: `stretch`,
   zIndex: `1`,
   margin: `0px`,
+  height: 'auto',
 }));
 
 const InvestorContainer: any = styled('div')({
@@ -672,7 +673,7 @@ function EntityContainer(props: EntityContainerProps): JSX.Element {
             </FormContainer2>
           </FormTax>
         </FormContainer>
-        <DividerVertical1 orientation="vertical" />
+        <DividerVertical1 orientation="vertical" height={'auto'} />
         <InvestorContainer>
           <CardHeader3>
             <Content2>
