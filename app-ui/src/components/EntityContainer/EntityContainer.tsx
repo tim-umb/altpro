@@ -78,7 +78,7 @@ const ProfileContainer: any = styled('div')({
   maxWidth: '25%',
 });
 
-const CardHeader1: any = styled('div')(({ theme }: any) => ({
+const ProfileContainerHead: any = styled('div')(({ theme }: any) => ({
   backgroundColor: theme.palette['background']['default'],
   borderRadius: `6px 0px 0px 0px`,
   display: `flex`,
@@ -158,7 +158,7 @@ const DividerHorizontal: any = styled(Divider)(({ theme }: any) => ({
   margin: `0px`,
 }));
 
-const Box1: any = styled('div')(({ theme }: any) => ({
+const ProfileContent: any = styled('div')(({ theme }: any) => ({
   backgroundColor: theme.palette['background']['default'],
   borderRadius: `0px 0px 0px 6px`,
   display: `flex`,
@@ -174,7 +174,7 @@ const Box1: any = styled('div')(({ theme }: any) => ({
   margin: `0px`,
 }));
 
-const Frame80: any = styled('div')({
+const ProfileContentHeader: any = styled('div')({
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
@@ -228,7 +228,7 @@ const Typography2: any = styled(Typography)(({ theme }: any) => ({
   textTransform: theme.typography['Typography']['body1'].textTransform,
 }));
 
-const EntityInfoTable1: any = styled(EntityInfoTable)(({ theme }: any) => ({
+const InfoTable1: any = styled(EntityInfoTable)(({ theme }: any) => ({
   alignSelf: `stretch`,
   margin: `16px 0px 0px 0px`,
 }));
@@ -255,7 +255,7 @@ const FormContainer: any = styled('div')({
   width: '50%',
 });
 
-const CardHeader2: any = styled('div')(({ theme }: any) => ({
+const FormContainerHeader: any = styled('div')(({ theme }: any) => ({
   backgroundColor: theme.palette['colors']['grey']['50'],
   display: `flex`,
   position: `relative`,
@@ -336,7 +336,20 @@ const IconButton2: any = styled(IconButton)(({ theme }: any) => ({
   margin: `0px`,
 }));
 
-const FormEntity: any = styled('div')(({ theme }: any) => ({
+const FormContent: any = styled('div')({
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `column`,
+  justifyContent: `flex-start`,
+  alignItems: `flex-start`,
+  padding: `0px`,
+  boxSizing: `border-box`,
+  alignSelf: `stretch`,
+  margin: `0px`,
+});
+
+const FormContainer1: any = styled('div')(({ theme }: any) => ({
   backgroundColor: theme.palette['colors']['grey']['50'],
   display: `flex`,
   position: `relative`,
@@ -349,19 +362,6 @@ const FormEntity: any = styled('div')(({ theme }: any) => ({
   alignSelf: `stretch`,
   margin: `0px`,
 }));
-
-const FormContainer1: any = styled('div')({
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `column`,
-  justifyContent: `flex-start`,
-  alignItems: `flex-start`,
-  padding: `0px`,
-  boxSizing: `border-box`,
-  alignSelf: `stretch`,
-  margin: `0px`,
-});
 
 const EntityForm1: any = styled(EntityForm)(({ theme }: any) => ({
   alignSelf: `stretch`,
@@ -383,7 +383,7 @@ const DividerHorizontal1: any = styled(Divider)(({ theme }: any) => ({
   margin: `0px`,
 }));
 
-const FormTax: any = styled('div')(({ theme }: any) => ({
+const FormContainer2: any = styled('div')(({ theme }: any) => ({
   backgroundColor: theme.palette['colors']['grey']['50'],
   display: `flex`,
   position: `relative`,
@@ -396,19 +396,6 @@ const FormTax: any = styled('div')(({ theme }: any) => ({
   alignSelf: `stretch`,
   margin: `0px`,
 }));
-
-const FormContainer2: any = styled('div')({
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `column`,
-  justifyContent: `flex-start`,
-  alignItems: `flex-start`,
-  padding: `0px`,
-  boxSizing: `border-box`,
-  alignSelf: `stretch`,
-  margin: `0px`,
-});
 
 const Typography3: any = styled(Typography)(({ theme }: any) => ({
   margin: `0px`,
@@ -479,7 +466,7 @@ const InvestorContainer: any = styled('div')({
   maxWidth: '25%',
 });
 
-const CardHeader3: any = styled('div')(({ theme }: any) => ({
+const InvestorContainerHea: any = styled('div')(({ theme }: any) => ({
   backgroundColor: theme.palette['background']['default'],
   borderRadius: `0px 6px 0px 0px`,
   display: `flex`,
@@ -559,7 +546,7 @@ const DividerHorizontal2: any = styled(Divider)(({ theme }: any) => ({
   margin: `0px`,
 }));
 
-const Box2: any = styled('div')(({ theme }: any) => ({
+const InvestorContent: any = styled('div')(({ theme }: any) => ({
   backgroundColor: theme.palette['colors']['grey']['50'],
   borderRadius: `0px 0px 6px 0px`,
   display: `flex`,
@@ -597,7 +584,7 @@ function EntityContainer(props: EntityContainerProps): JSX.Element {
       </Helmet>
       <Content>
         <ProfileContainer>
-          <CardHeader1>
+          <ProfileContainerHead>
             <Content1>
               <Header>{`Entity`}</Header>
               {false && <Subheader>{`{Subheader}`}</Subheader>}
@@ -610,10 +597,10 @@ function EntityContainer(props: EntityContainerProps): JSX.Element {
             >
               {'Edit'}
             </Button1>
-          </CardHeader1>
+          </ProfileContainerHead>
           <DividerHorizontal orientation="horizontal" />
-          <Box1>
-            <Frame80>
+          <ProfileContent>
+            <ProfileContentHeader>
               <Typography1 variant={'body1'} gutterBottom={false}>
                 {`{AccountNameValue}`}
               </Typography1>
@@ -623,13 +610,13 @@ function EntityContainer(props: EntityContainerProps): JSX.Element {
               <Typography2 variant={'body1'} gutterBottom={false}>
                 {`{Value}`}
               </Typography2>
-            </Frame80>
-            <EntityInfoTable1 />
-          </Box1>
+            </ProfileContentHeader>
+            <InfoTable1 />
+          </ProfileContent>
         </ProfileContainer>
         <DividerVertical orientation="vertical" height={'auto'} />
         <FormContainer>
-          <CardHeader2>
+          <FormContainerHeader>
             <AvatarWrapper>
               <IconButton1 size={'small'} color={'default'} disabled={false}>
                 <SvgIcon
@@ -650,8 +637,8 @@ function EntityContainer(props: EntityContainerProps): JSX.Element {
                 ></SvgIcon>
               </IconButton2>
             )}
-          </CardHeader2>
-          <FormEntity>
+          </FormContainerHeader>
+          <FormContent>
             <FormContainer1>
               <Card1>
                 <CardContent1>
@@ -659,9 +646,7 @@ function EntityContainer(props: EntityContainerProps): JSX.Element {
                 </CardContent1>
               </Card1>
             </FormContainer1>
-          </FormEntity>
-          <DividerHorizontal1 orientation="horizontal" />
-          <FormTax>
+            <DividerHorizontal1 orientation="horizontal" />
             <FormContainer2>
               <Card2>
                 <CardContent2>
@@ -676,11 +661,11 @@ function EntityContainer(props: EntityContainerProps): JSX.Element {
                 </CardContent2>
               </Card2>
             </FormContainer2>
-          </FormTax>
+          </FormContent>
         </FormContainer>
         <DividerVertical1 orientation="vertical" height={'auto'} />
         <InvestorContainer>
-          <CardHeader3>
+          <InvestorContainerHea>
             <Content2>
               <Header2>{`Individual Investors`}</Header2>
               {false && <Subheader2>{`{Subheader}`}</Subheader2>}
@@ -695,9 +680,9 @@ function EntityContainer(props: EntityContainerProps): JSX.Element {
                 {'Edit'}
               </Button2>
             )}
-          </CardHeader3>
+          </InvestorContainerHea>
           <DividerHorizontal2 orientation="horizontal" />
-          <Box2>
+          <InvestorContent>
             <Button3
               size={'medium'}
               color={'primary'}
@@ -712,7 +697,7 @@ function EntityContainer(props: EntityContainerProps): JSX.Element {
             >
               {'Add Individual'}
             </Button3>
-          </Box2>
+          </InvestorContent>
         </InvestorContainer>
       </Content>
     </EntityContainer1>

@@ -17,7 +17,7 @@ import { Typography, Divider } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { EntityInfoTableProps } from 'src/types';
 
-const EntityInfoTable1: any = styled('div')({
+const InfoTable: any = styled('div')({
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
@@ -1033,7 +1033,7 @@ const DividerHorizontal5: any = styled(Divider)(({ theme }: any) => ({
 
 function EntityInfoTable(props: EntityInfoTableProps): JSX.Element {
   return (
-    <EntityInfoTable1 className={props.className}>
+    <InfoTable className={props.className}>
       <Row1>
         <Cell1>
           <Box1>
@@ -1280,7 +1280,7 @@ function EntityInfoTable(props: EntityInfoTableProps): JSX.Element {
         </Cell35>
         {false && <DividerHorizontal5 orientation="horizontal" />}
       </Row6>
-    </EntityInfoTable1>
+    </InfoTable>
   );
 }
 
