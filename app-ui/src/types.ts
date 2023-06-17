@@ -28,5 +28,7 @@ export interface EntityInfoTableProps {
 
 export interface EntityFormProps {
   className?: any;
+  item: String;
+  index: Number;
 }
 
