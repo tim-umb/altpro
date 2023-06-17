@@ -190,7 +190,7 @@ const Typography6: any = styled(Typography)(({ theme }: any) => ({
 }));
 
 const DividerHorizontal: any = styled(Divider)(({ theme }: any) => ({
-  width: `285px`,
+  width: `402px`,
   position: `absolute`,
   left: `0px`,
   top: `51px`,
@@ -357,7 +357,7 @@ const Typography12: any = styled(Typography)(({ theme }: any) => ({
 }));
 
 const DividerHorizontal1: any = styled(Divider)(({ theme }: any) => ({
-  width: `285px`,
+  width: `402px`,
   position: `absolute`,
   left: `0px`,
   top: `51px`,
@@ -524,7 +524,7 @@ const Typography18: any = styled(Typography)(({ theme }: any) => ({
 }));
 
 const DividerHorizontal2: any = styled(Divider)(({ theme }: any) => ({
-  width: `285px`,
+  width: `402px`,
   position: `absolute`,
   left: `0px`,
   top: `51px`,
@@ -691,7 +691,7 @@ const Typography24: any = styled(Typography)(({ theme }: any) => ({
 }));
 
 const DividerHorizontal3: any = styled(Divider)(({ theme }: any) => ({
-  width: `285px`,
+  width: `402px`,
   position: `absolute`,
   left: `0px`,
   top: `51px`,
@@ -858,7 +858,7 @@ const Typography30: any = styled(Typography)(({ theme }: any) => ({
 }));
 
 const DividerHorizontal4: any = styled(Divider)(({ theme }: any) => ({
-  width: `285px`,
+  width: `402px`,
   position: `absolute`,
   left: `0px`,
   top: `51px`,
@@ -1025,7 +1025,7 @@ const Typography36: any = styled(Typography)(({ theme }: any) => ({
 }));
 
 const DividerHorizontal5: any = styled(Divider)(({ theme }: any) => ({
-  width: `285px`,
+  width: `402px`,
   position: `absolute`,
   left: `0px`,
   top: `51px`,

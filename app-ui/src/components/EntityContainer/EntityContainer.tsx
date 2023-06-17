@@ -20,20 +20,19 @@ import {
   Avatar,
   IconButton,
   SvgIcon,
-  TextField,
-  FormControl,
-  Select,
-  InputLabel,
-  Checkbox,
-  FormControlLabel,
+  Card,
+  CardContent,
+  Stack,
+  Skeleton,
 } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 import StarIcon from '@mui/icons-material/Star';
-import MenuItem from '@mui/material/MenuItem';
 import AddIcon from '@mui/icons-material/Add';
+import { Helmet } from 'react-helmet-async';
 import { styled } from '@mui/material/styles';
+import EntityInfoTable from 'src/components/EntityInfoTable/EntityInfoTable';
+import EntityForm from 'src/components/EntityForm/EntityForm';
 import { EntityContainerProps } from 'src/types';
-import useEntityContainer from 'src/components/EntityContainer/useEntityContainer';
 
 const EntityContainer1: any = styled('div')({
   borderRadius: `6px`,
@@ -79,7 +78,7 @@ const ProfileContainer: any = styled('div')({
   maxWidth: '25%',
 });
 
-const CardHeader: any = styled('div')(({ theme }: any) => ({
+const CardHeader1: any = styled('div')(({ theme }: any) => ({
   backgroundColor: theme.palette['background']['default'],
   borderRadius: `6px 0px 0px 0px`,
   display: `flex`,
@@ -229,1018 +228,9 @@ const Typography2: any = styled(Typography)(({ theme }: any) => ({
   textTransform: theme.typography['Typography']['body1'].textTransform,
 }));
 
-const EntityInfoTable: any = styled('div')({
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `column`,
-  justifyContent: `flex-start`,
-  alignItems: `flex-start`,
-  padding: `0px`,
-  boxSizing: `border-box`,
+const EntityInfoTable1: any = styled(EntityInfoTable)(({ theme }: any) => ({
   alignSelf: `stretch`,
   margin: `16px 0px 0px 0px`,
-});
-
-const Row1: any = styled('div')({
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `row`,
-  justifyContent: `flex-start`,
-  alignItems: `center`,
-  padding: `0px`,
-  boxSizing: `border-box`,
-  alignSelf: `stretch`,
-  margin: `0px`,
-});
-
-const Cell1: any = styled('div')({
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `row`,
-  justifyContent: `flex-start`,
-  alignItems: `center`,
-  padding: `6px 16px 6px 0px`,
-  boxSizing: `border-box`,
-  flex: `1`,
-  margin: `0px`,
-});
-
-const Box2: any = styled('div')({
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `column`,
-  justifyContent: `flex-start`,
-  alignItems: `flex-start`,
-  padding: `0px`,
-  boxSizing: `border-box`,
-  flex: `1`,
-  margin: `0px`,
-});
-
-const Typography3: any = styled(Typography)(({ theme }: any) => ({
-  margin: `0px`,
-  color: theme.palette['text']['primary'],
-  fontStyle: theme.typography['Typography']['body2'].fontStyle,
-  fontFamily: theme.typography['Typography']['body2'].fontFamily,
-  fontWeight: theme.typography['Typography']['body2'].fontWeight,
-  fontSize: theme.typography['Typography']['body2'].fontSize,
-  letterSpacing: theme.typography['Typography']['body2'].letterSpacing,
-  lineHeight: theme.typography['Typography']['body2'].lineHeight,
-  textDecoration: theme.typography['Typography']['body2'].textDecoration,
-  textTransform: theme.typography['Typography']['body2'].textTransform,
-}));
-
-const Typography4: any = styled(Typography)(({ theme }: any) => ({
-  margin: `0px`,
-  color: theme.palette['text']['primary'],
-  fontStyle: theme.typography['Typography']['body2'].fontStyle,
-  fontFamily: theme.typography['Typography']['body2'].fontFamily,
-  fontWeight: theme.typography['Typography']['body2'].fontWeight,
-  fontSize: theme.typography['Typography']['body2'].fontSize,
-  letterSpacing: theme.typography['Typography']['body2'].letterSpacing,
-  lineHeight: theme.typography['Typography']['body2'].lineHeight,
-  textDecoration: theme.typography['Typography']['body2'].textDecoration,
-  textTransform: theme.typography['Typography']['body2'].textTransform,
-}));
-
-const Cell2: any = styled('div')({
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `row`,
-  justifyContent: `flex-start`,
-  alignItems: `center`,
-  padding: `6px 16px`,
-  boxSizing: `border-box`,
-  margin: `0px`,
-});
-
-const Box3: any = styled('div')({
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `column`,
-  justifyContent: `flex-start`,
-  alignItems: `flex-start`,
-  padding: `0px`,
-  boxSizing: `border-box`,
-  width: `108px`,
-  margin: `0px`,
-});
-
-const Typography5: any = styled(Typography)(({ theme }: any) => ({
-  margin: `0px`,
-}));
-
-const Typography6: any = styled(Typography)(({ theme }: any) => ({
-  margin: `0px`,
-  color: theme.palette['text']['primary'],
-  fontStyle: theme.typography['Typography']['body2'].fontStyle,
-  fontFamily: theme.typography['Typography']['body2'].fontFamily,
-  fontWeight: theme.typography['Typography']['body2'].fontWeight,
-  fontSize: theme.typography['Typography']['body2'].fontSize,
-  letterSpacing: theme.typography['Typography']['body2'].letterSpacing,
-  lineHeight: theme.typography['Typography']['body2'].lineHeight,
-  textDecoration: theme.typography['Typography']['body2'].textDecoration,
-  textTransform: theme.typography['Typography']['body2'].textTransform,
-}));
-
-const Cell3: any = styled('div')({
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `row`,
-  justifyContent: `flex-start`,
-  alignItems: `center`,
-  padding: `6px 0px 6px 16px`,
-  boxSizing: `border-box`,
-  flex: `1`,
-  margin: `0px`,
-});
-
-const Box4: any = styled('div')({
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `column`,
-  justifyContent: `flex-start`,
-  alignItems: `flex-end`,
-  padding: `0px`,
-  boxSizing: `border-box`,
-  flex: `1`,
-  margin: `0px`,
-});
-
-const Typography7: any = styled(Typography)(({ theme }: any) => ({
-  margin: `0px`,
-  color: theme.palette['text']['primary'],
-  fontStyle: theme.typography['Typography']['body2'].fontStyle,
-  fontFamily: theme.typography['Typography']['body2'].fontFamily,
-  fontWeight: theme.typography['Typography']['body2'].fontWeight,
-  fontSize: theme.typography['Typography']['body2'].fontSize,
-  letterSpacing: theme.typography['Typography']['body2'].letterSpacing,
-  lineHeight: theme.typography['Typography']['body2'].lineHeight,
-  textDecoration: theme.typography['Typography']['body2'].textDecoration,
-  textTransform: theme.typography['Typography']['body2'].textTransform,
-}));
-
-const Typography8: any = styled(Typography)(({ theme }: any) => ({
-  margin: `0px`,
-  color: theme.palette['text']['primary'],
-  fontStyle: theme.typography['Typography']['body2'].fontStyle,
-  fontFamily: theme.typography['Typography']['body2'].fontFamily,
-  fontWeight: theme.typography['Typography']['body2'].fontWeight,
-  fontSize: theme.typography['Typography']['body2'].fontSize,
-  letterSpacing: theme.typography['Typography']['body2'].letterSpacing,
-  lineHeight: theme.typography['Typography']['body2'].lineHeight,
-  textDecoration: theme.typography['Typography']['body2'].textDecoration,
-  textTransform: theme.typography['Typography']['body2'].textTransform,
-}));
-
-const DividerHorizontal1: any = styled(Divider)(({ theme }: any) => ({
-  width: `402px`,
-  position: `absolute`,
-  left: `0px`,
-  top: `51px`,
-}));
-
-const Row2: any = styled('div')({
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `row`,
-  justifyContent: `flex-start`,
-  alignItems: `center`,
-  padding: `0px`,
-  boxSizing: `border-box`,
-  alignSelf: `stretch`,
-  margin: `0px`,
-});
-
-const Cell11: any = styled('div')({
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `row`,
-  justifyContent: `flex-start`,
-  alignItems: `center`,
-  padding: `6px 16px 6px 0px`,
-  boxSizing: `border-box`,
-  flex: `1`,
-  margin: `0px`,
-});
-
-const Box5: any = styled('div')({
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `column`,
-  justifyContent: `flex-start`,
-  alignItems: `flex-start`,
-  padding: `0px`,
-  boxSizing: `border-box`,
-  flex: `1`,
-  margin: `0px`,
-});
-
-const Typography9: any = styled(Typography)(({ theme }: any) => ({
-  margin: `0px`,
-  color: theme.palette['text']['primary'],
-  fontStyle: theme.typography['Typography']['body2'].fontStyle,
-  fontFamily: theme.typography['Typography']['body2'].fontFamily,
-  fontWeight: theme.typography['Typography']['body2'].fontWeight,
-  fontSize: theme.typography['Typography']['body2'].fontSize,
-  letterSpacing: theme.typography['Typography']['body2'].letterSpacing,
-  lineHeight: theme.typography['Typography']['body2'].lineHeight,
-  textDecoration: theme.typography['Typography']['body2'].textDecoration,
-  textTransform: theme.typography['Typography']['body2'].textTransform,
-}));
-
-const Typography10: any = styled(Typography)(({ theme }: any) => ({
-  margin: `0px`,
-  color: theme.palette['text']['primary'],
-  fontStyle: theme.typography['Typography']['body2'].fontStyle,
-  fontFamily: theme.typography['Typography']['body2'].fontFamily,
-  fontWeight: theme.typography['Typography']['body2'].fontWeight,
-  fontSize: theme.typography['Typography']['body2'].fontSize,
-  letterSpacing: theme.typography['Typography']['body2'].letterSpacing,
-  lineHeight: theme.typography['Typography']['body2'].lineHeight,
-  textDecoration: theme.typography['Typography']['body2'].textDecoration,
-  textTransform: theme.typography['Typography']['body2'].textTransform,
-}));
-
-const Cell21: any = styled('div')({
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `row`,
-  justifyContent: `flex-start`,
-  alignItems: `center`,
-  padding: `6px 16px`,
-  boxSizing: `border-box`,
-  flex: `1`,
-  margin: `0px`,
-});
-
-const Box6: any = styled('div')({
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `column`,
-  justifyContent: `flex-start`,
-  alignItems: `flex-start`,
-  padding: `0px`,
-  boxSizing: `border-box`,
-  flex: `1`,
-  margin: `0px`,
-});
-
-const Typography11: any = styled(Typography)(({ theme }: any) => ({
-  margin: `0px`,
-}));
-
-const Typography12: any = styled(Typography)(({ theme }: any) => ({
-  margin: `0px`,
-  color: theme.palette['text']['primary'],
-  fontStyle: theme.typography['Typography']['body2'].fontStyle,
-  fontFamily: theme.typography['Typography']['body2'].fontFamily,
-  fontWeight: theme.typography['Typography']['body2'].fontWeight,
-  fontSize: theme.typography['Typography']['body2'].fontSize,
-  letterSpacing: theme.typography['Typography']['body2'].letterSpacing,
-  lineHeight: theme.typography['Typography']['body2'].lineHeight,
-  textDecoration: theme.typography['Typography']['body2'].textDecoration,
-  textTransform: theme.typography['Typography']['body2'].textTransform,
-}));
-
-const Cell31: any = styled('div')({
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `row`,
-  justifyContent: `flex-start`,
-  alignItems: `center`,
-  padding: `6px 0px 6px 16px`,
-  boxSizing: `border-box`,
-  flex: `1`,
-  margin: `0px`,
-});
-
-const Box7: any = styled('div')({
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `column`,
-  justifyContent: `flex-start`,
-  alignItems: `flex-end`,
-  padding: `0px`,
-  boxSizing: `border-box`,
-  flex: `1`,
-  margin: `0px`,
-});
-
-const Typography13: any = styled(Typography)(({ theme }: any) => ({
-  margin: `0px`,
-  color: theme.palette['text']['primary'],
-  fontStyle: theme.typography['Typography']['body2'].fontStyle,
-  fontFamily: theme.typography['Typography']['body2'].fontFamily,
-  fontWeight: theme.typography['Typography']['body2'].fontWeight,
-  fontSize: theme.typography['Typography']['body2'].fontSize,
-  letterSpacing: theme.typography['Typography']['body2'].letterSpacing,
-  lineHeight: theme.typography['Typography']['body2'].lineHeight,
-  textDecoration: theme.typography['Typography']['body2'].textDecoration,
-  textTransform: theme.typography['Typography']['body2'].textTransform,
-}));
-
-const Typography14: any = styled(Typography)(({ theme }: any) => ({
-  margin: `0px`,
-  color: theme.palette['text']['primary'],
-  fontStyle: theme.typography['Typography']['body2'].fontStyle,
-  fontFamily: theme.typography['Typography']['body2'].fontFamily,
-  fontWeight: theme.typography['Typography']['body2'].fontWeight,
-  fontSize: theme.typography['Typography']['body2'].fontSize,
-  letterSpacing: theme.typography['Typography']['body2'].letterSpacing,
-  lineHeight: theme.typography['Typography']['body2'].lineHeight,
-  textDecoration: theme.typography['Typography']['body2'].textDecoration,
-  textTransform: theme.typography['Typography']['body2'].textTransform,
-}));
-
-const DividerHorizontal2: any = styled(Divider)(({ theme }: any) => ({
-  width: `402px`,
-  position: `absolute`,
-  left: `0px`,
-  top: `51px`,
-}));
-
-const Row3: any = styled('div')({
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `row`,
-  justifyContent: `flex-start`,
-  alignItems: `center`,
-  padding: `0px`,
-  boxSizing: `border-box`,
-  alignSelf: `stretch`,
-  margin: `0px`,
-});
-
-const Cell12: any = styled('div')({
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `row`,
-  justifyContent: `flex-start`,
-  alignItems: `center`,
-  padding: `6px 16px 6px 0px`,
-  boxSizing: `border-box`,
-  flex: `1`,
-  margin: `0px`,
-});
-
-const Box8: any = styled('div')({
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `column`,
-  justifyContent: `flex-start`,
-  alignItems: `flex-start`,
-  padding: `0px`,
-  boxSizing: `border-box`,
-  flex: `1`,
-  margin: `0px`,
-});
-
-const Typography15: any = styled(Typography)(({ theme }: any) => ({
-  margin: `0px`,
-  color: theme.palette['text']['primary'],
-  fontStyle: theme.typography['Typography']['body2'].fontStyle,
-  fontFamily: theme.typography['Typography']['body2'].fontFamily,
-  fontWeight: theme.typography['Typography']['body2'].fontWeight,
-  fontSize: theme.typography['Typography']['body2'].fontSize,
-  letterSpacing: theme.typography['Typography']['body2'].letterSpacing,
-  lineHeight: theme.typography['Typography']['body2'].lineHeight,
-  textDecoration: theme.typography['Typography']['body2'].textDecoration,
-  textTransform: theme.typography['Typography']['body2'].textTransform,
-}));
-
-const Typography16: any = styled(Typography)(({ theme }: any) => ({
-  margin: `0px`,
-  color: theme.palette['text']['primary'],
-  fontStyle: theme.typography['Typography']['body2'].fontStyle,
-  fontFamily: theme.typography['Typography']['body2'].fontFamily,
-  fontWeight: theme.typography['Typography']['body2'].fontWeight,
-  fontSize: theme.typography['Typography']['body2'].fontSize,
-  letterSpacing: theme.typography['Typography']['body2'].letterSpacing,
-  lineHeight: theme.typography['Typography']['body2'].lineHeight,
-  textDecoration: theme.typography['Typography']['body2'].textDecoration,
-  textTransform: theme.typography['Typography']['body2'].textTransform,
-}));
-
-const Cell22: any = styled('div')({
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `row`,
-  justifyContent: `flex-start`,
-  alignItems: `center`,
-  padding: `6px 16px`,
-  boxSizing: `border-box`,
-  flex: `1`,
-  margin: `0px`,
-});
-
-const Box9: any = styled('div')({
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `column`,
-  justifyContent: `flex-start`,
-  alignItems: `flex-start`,
-  padding: `0px`,
-  boxSizing: `border-box`,
-  flex: `1`,
-  margin: `0px`,
-});
-
-const Typography17: any = styled(Typography)(({ theme }: any) => ({
-  margin: `0px`,
-}));
-
-const Typography18: any = styled(Typography)(({ theme }: any) => ({
-  margin: `0px`,
-  color: theme.palette['text']['primary'],
-  fontStyle: theme.typography['Typography']['body2'].fontStyle,
-  fontFamily: theme.typography['Typography']['body2'].fontFamily,
-  fontWeight: theme.typography['Typography']['body2'].fontWeight,
-  fontSize: theme.typography['Typography']['body2'].fontSize,
-  letterSpacing: theme.typography['Typography']['body2'].letterSpacing,
-  lineHeight: theme.typography['Typography']['body2'].lineHeight,
-  textDecoration: theme.typography['Typography']['body2'].textDecoration,
-  textTransform: theme.typography['Typography']['body2'].textTransform,
-}));
-
-const Cell32: any = styled('div')({
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `row`,
-  justifyContent: `flex-start`,
-  alignItems: `center`,
-  padding: `6px 0px 6px 16px`,
-  boxSizing: `border-box`,
-  flex: `1`,
-  margin: `0px`,
-});
-
-const Box10: any = styled('div')({
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `column`,
-  justifyContent: `flex-start`,
-  alignItems: `flex-end`,
-  padding: `0px`,
-  boxSizing: `border-box`,
-  flex: `1`,
-  margin: `0px`,
-});
-
-const Typography19: any = styled(Typography)(({ theme }: any) => ({
-  margin: `0px`,
-  color: theme.palette['text']['primary'],
-  fontStyle: theme.typography['Typography']['body2'].fontStyle,
-  fontFamily: theme.typography['Typography']['body2'].fontFamily,
-  fontWeight: theme.typography['Typography']['body2'].fontWeight,
-  fontSize: theme.typography['Typography']['body2'].fontSize,
-  letterSpacing: theme.typography['Typography']['body2'].letterSpacing,
-  lineHeight: theme.typography['Typography']['body2'].lineHeight,
-  textDecoration: theme.typography['Typography']['body2'].textDecoration,
-  textTransform: theme.typography['Typography']['body2'].textTransform,
-}));
-
-const Typography20: any = styled(Typography)(({ theme }: any) => ({
-  margin: `0px`,
-  color: theme.palette['text']['primary'],
-  fontStyle: theme.typography['Typography']['body2'].fontStyle,
-  fontFamily: theme.typography['Typography']['body2'].fontFamily,
-  fontWeight: theme.typography['Typography']['body2'].fontWeight,
-  fontSize: theme.typography['Typography']['body2'].fontSize,
-  letterSpacing: theme.typography['Typography']['body2'].letterSpacing,
-  lineHeight: theme.typography['Typography']['body2'].lineHeight,
-  textDecoration: theme.typography['Typography']['body2'].textDecoration,
-  textTransform: theme.typography['Typography']['body2'].textTransform,
-}));
-
-const DividerHorizontal3: any = styled(Divider)(({ theme }: any) => ({
-  width: `402px`,
-  position: `absolute`,
-  left: `0px`,
-  top: `51px`,
-}));
-
-const Row4: any = styled('div')({
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `row`,
-  justifyContent: `flex-start`,
-  alignItems: `center`,
-  padding: `0px`,
-  boxSizing: `border-box`,
-  alignSelf: `stretch`,
-  margin: `0px`,
-});
-
-const Cell13: any = styled('div')({
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `row`,
-  justifyContent: `flex-start`,
-  alignItems: `center`,
-  padding: `6px 16px 6px 0px`,
-  boxSizing: `border-box`,
-  flex: `1`,
-  margin: `0px`,
-});
-
-const Box11: any = styled('div')({
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `column`,
-  justifyContent: `flex-start`,
-  alignItems: `flex-start`,
-  padding: `0px`,
-  boxSizing: `border-box`,
-  flex: `1`,
-  margin: `0px`,
-});
-
-const Typography21: any = styled(Typography)(({ theme }: any) => ({
-  margin: `0px`,
-  color: theme.palette['text']['primary'],
-  fontStyle: theme.typography['Typography']['body2'].fontStyle,
-  fontFamily: theme.typography['Typography']['body2'].fontFamily,
-  fontWeight: theme.typography['Typography']['body2'].fontWeight,
-  fontSize: theme.typography['Typography']['body2'].fontSize,
-  letterSpacing: theme.typography['Typography']['body2'].letterSpacing,
-  lineHeight: theme.typography['Typography']['body2'].lineHeight,
-  textDecoration: theme.typography['Typography']['body2'].textDecoration,
-  textTransform: theme.typography['Typography']['body2'].textTransform,
-}));
-
-const Typography22: any = styled(Typography)(({ theme }: any) => ({
-  margin: `0px`,
-  color: theme.palette['text']['primary'],
-  fontStyle: theme.typography['Typography']['body2'].fontStyle,
-  fontFamily: theme.typography['Typography']['body2'].fontFamily,
-  fontWeight: theme.typography['Typography']['body2'].fontWeight,
-  fontSize: theme.typography['Typography']['body2'].fontSize,
-  letterSpacing: theme.typography['Typography']['body2'].letterSpacing,
-  lineHeight: theme.typography['Typography']['body2'].lineHeight,
-  textDecoration: theme.typography['Typography']['body2'].textDecoration,
-  textTransform: theme.typography['Typography']['body2'].textTransform,
-}));
-
-const Cell23: any = styled('div')({
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `row`,
-  justifyContent: `flex-start`,
-  alignItems: `center`,
-  padding: `6px 16px`,
-  boxSizing: `border-box`,
-  flex: `1`,
-  margin: `0px`,
-});
-
-const Box12: any = styled('div')({
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `column`,
-  justifyContent: `flex-start`,
-  alignItems: `flex-start`,
-  padding: `0px`,
-  boxSizing: `border-box`,
-  flex: `1`,
-  margin: `0px`,
-});
-
-const Typography23: any = styled(Typography)(({ theme }: any) => ({
-  margin: `0px`,
-}));
-
-const Typography24: any = styled(Typography)(({ theme }: any) => ({
-  margin: `0px`,
-  color: theme.palette['text']['primary'],
-  fontStyle: theme.typography['Typography']['body2'].fontStyle,
-  fontFamily: theme.typography['Typography']['body2'].fontFamily,
-  fontWeight: theme.typography['Typography']['body2'].fontWeight,
-  fontSize: theme.typography['Typography']['body2'].fontSize,
-  letterSpacing: theme.typography['Typography']['body2'].letterSpacing,
-  lineHeight: theme.typography['Typography']['body2'].lineHeight,
-  textDecoration: theme.typography['Typography']['body2'].textDecoration,
-  textTransform: theme.typography['Typography']['body2'].textTransform,
-}));
-
-const Cell33: any = styled('div')({
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `row`,
-  justifyContent: `flex-start`,
-  alignItems: `center`,
-  padding: `6px 0px 6px 16px`,
-  boxSizing: `border-box`,
-  flex: `1`,
-  margin: `0px`,
-});
-
-const Box13: any = styled('div')({
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `column`,
-  justifyContent: `flex-start`,
-  alignItems: `flex-end`,
-  padding: `0px`,
-  boxSizing: `border-box`,
-  flex: `1`,
-  margin: `0px`,
-});
-
-const Typography25: any = styled(Typography)(({ theme }: any) => ({
-  margin: `0px`,
-  color: theme.palette['text']['primary'],
-  fontStyle: theme.typography['Typography']['body2'].fontStyle,
-  fontFamily: theme.typography['Typography']['body2'].fontFamily,
-  fontWeight: theme.typography['Typography']['body2'].fontWeight,
-  fontSize: theme.typography['Typography']['body2'].fontSize,
-  letterSpacing: theme.typography['Typography']['body2'].letterSpacing,
-  lineHeight: theme.typography['Typography']['body2'].lineHeight,
-  textDecoration: theme.typography['Typography']['body2'].textDecoration,
-  textTransform: theme.typography['Typography']['body2'].textTransform,
-}));
-
-const Typography26: any = styled(Typography)(({ theme }: any) => ({
-  margin: `0px`,
-  color: theme.palette['text']['primary'],
-  fontStyle: theme.typography['Typography']['body2'].fontStyle,
-  fontFamily: theme.typography['Typography']['body2'].fontFamily,
-  fontWeight: theme.typography['Typography']['body2'].fontWeight,
-  fontSize: theme.typography['Typography']['body2'].fontSize,
-  letterSpacing: theme.typography['Typography']['body2'].letterSpacing,
-  lineHeight: theme.typography['Typography']['body2'].lineHeight,
-  textDecoration: theme.typography['Typography']['body2'].textDecoration,
-  textTransform: theme.typography['Typography']['body2'].textTransform,
-}));
-
-const DividerHorizontal4: any = styled(Divider)(({ theme }: any) => ({
-  width: `402px`,
-  position: `absolute`,
-  left: `0px`,
-  top: `51px`,
-}));
-
-const Row5: any = styled('div')({
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `row`,
-  justifyContent: `flex-start`,
-  alignItems: `center`,
-  padding: `0px`,
-  boxSizing: `border-box`,
-  alignSelf: `stretch`,
-  margin: `0px`,
-});
-
-const Cell14: any = styled('div')({
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `row`,
-  justifyContent: `flex-start`,
-  alignItems: `center`,
-  padding: `6px 16px 6px 0px`,
-  boxSizing: `border-box`,
-  flex: `1`,
-  margin: `0px`,
-});
-
-const Box14: any = styled('div')({
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `column`,
-  justifyContent: `flex-start`,
-  alignItems: `flex-start`,
-  padding: `0px`,
-  boxSizing: `border-box`,
-  flex: `1`,
-  margin: `0px`,
-});
-
-const Typography27: any = styled(Typography)(({ theme }: any) => ({
-  margin: `0px`,
-  color: theme.palette['text']['primary'],
-  fontStyle: theme.typography['Typography']['body2'].fontStyle,
-  fontFamily: theme.typography['Typography']['body2'].fontFamily,
-  fontWeight: theme.typography['Typography']['body2'].fontWeight,
-  fontSize: theme.typography['Typography']['body2'].fontSize,
-  letterSpacing: theme.typography['Typography']['body2'].letterSpacing,
-  lineHeight: theme.typography['Typography']['body2'].lineHeight,
-  textDecoration: theme.typography['Typography']['body2'].textDecoration,
-  textTransform: theme.typography['Typography']['body2'].textTransform,
-}));
-
-const Typography28: any = styled(Typography)(({ theme }: any) => ({
-  margin: `0px`,
-  color: theme.palette['text']['primary'],
-  fontStyle: theme.typography['Typography']['body2'].fontStyle,
-  fontFamily: theme.typography['Typography']['body2'].fontFamily,
-  fontWeight: theme.typography['Typography']['body2'].fontWeight,
-  fontSize: theme.typography['Typography']['body2'].fontSize,
-  letterSpacing: theme.typography['Typography']['body2'].letterSpacing,
-  lineHeight: theme.typography['Typography']['body2'].lineHeight,
-  textDecoration: theme.typography['Typography']['body2'].textDecoration,
-  textTransform: theme.typography['Typography']['body2'].textTransform,
-}));
-
-const Cell24: any = styled('div')({
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `row`,
-  justifyContent: `flex-start`,
-  alignItems: `center`,
-  padding: `6px 16px`,
-  boxSizing: `border-box`,
-  flex: `1`,
-  margin: `0px`,
-});
-
-const Box15: any = styled('div')({
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `column`,
-  justifyContent: `flex-start`,
-  alignItems: `flex-start`,
-  padding: `0px`,
-  boxSizing: `border-box`,
-  flex: `1`,
-  margin: `0px`,
-});
-
-const Typography29: any = styled(Typography)(({ theme }: any) => ({
-  margin: `0px`,
-}));
-
-const Typography30: any = styled(Typography)(({ theme }: any) => ({
-  margin: `0px`,
-  color: theme.palette['text']['primary'],
-  fontStyle: theme.typography['Typography']['body2'].fontStyle,
-  fontFamily: theme.typography['Typography']['body2'].fontFamily,
-  fontWeight: theme.typography['Typography']['body2'].fontWeight,
-  fontSize: theme.typography['Typography']['body2'].fontSize,
-  letterSpacing: theme.typography['Typography']['body2'].letterSpacing,
-  lineHeight: theme.typography['Typography']['body2'].lineHeight,
-  textDecoration: theme.typography['Typography']['body2'].textDecoration,
-  textTransform: theme.typography['Typography']['body2'].textTransform,
-}));
-
-const Cell34: any = styled('div')({
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `row`,
-  justifyContent: `flex-start`,
-  alignItems: `center`,
-  padding: `6px 0px 6px 16px`,
-  boxSizing: `border-box`,
-  flex: `1`,
-  margin: `0px`,
-});
-
-const Box16: any = styled('div')({
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `column`,
-  justifyContent: `flex-start`,
-  alignItems: `flex-end`,
-  padding: `0px`,
-  boxSizing: `border-box`,
-  flex: `1`,
-  margin: `0px`,
-});
-
-const Typography31: any = styled(Typography)(({ theme }: any) => ({
-  margin: `0px`,
-  color: theme.palette['text']['primary'],
-  fontStyle: theme.typography['Typography']['body2'].fontStyle,
-  fontFamily: theme.typography['Typography']['body2'].fontFamily,
-  fontWeight: theme.typography['Typography']['body2'].fontWeight,
-  fontSize: theme.typography['Typography']['body2'].fontSize,
-  letterSpacing: theme.typography['Typography']['body2'].letterSpacing,
-  lineHeight: theme.typography['Typography']['body2'].lineHeight,
-  textDecoration: theme.typography['Typography']['body2'].textDecoration,
-  textTransform: theme.typography['Typography']['body2'].textTransform,
-}));
-
-const Typography32: any = styled(Typography)(({ theme }: any) => ({
-  margin: `0px`,
-  color: theme.palette['text']['primary'],
-  fontStyle: theme.typography['Typography']['body2'].fontStyle,
-  fontFamily: theme.typography['Typography']['body2'].fontFamily,
-  fontWeight: theme.typography['Typography']['body2'].fontWeight,
-  fontSize: theme.typography['Typography']['body2'].fontSize,
-  letterSpacing: theme.typography['Typography']['body2'].letterSpacing,
-  lineHeight: theme.typography['Typography']['body2'].lineHeight,
-  textDecoration: theme.typography['Typography']['body2'].textDecoration,
-  textTransform: theme.typography['Typography']['body2'].textTransform,
-}));
-
-const DividerHorizontal5: any = styled(Divider)(({ theme }: any) => ({
-  width: `402px`,
-  position: `absolute`,
-  left: `0px`,
-  top: `51px`,
-}));
-
-const Row6: any = styled('div')({
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `row`,
-  justifyContent: `flex-start`,
-  alignItems: `center`,
-  padding: `0px`,
-  boxSizing: `border-box`,
-  alignSelf: `stretch`,
-  margin: `0px`,
-});
-
-const Cell15: any = styled('div')({
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `row`,
-  justifyContent: `flex-start`,
-  alignItems: `center`,
-  padding: `6px 16px 6px 0px`,
-  boxSizing: `border-box`,
-  flex: `1`,
-  margin: `0px`,
-});
-
-const Box17: any = styled('div')({
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `column`,
-  justifyContent: `flex-start`,
-  alignItems: `flex-start`,
-  padding: `0px`,
-  boxSizing: `border-box`,
-  flex: `1`,
-  margin: `0px`,
-});
-
-const Typography33: any = styled(Typography)(({ theme }: any) => ({
-  margin: `0px`,
-  color: theme.palette['text']['primary'],
-  fontStyle: theme.typography['Typography']['body2'].fontStyle,
-  fontFamily: theme.typography['Typography']['body2'].fontFamily,
-  fontWeight: theme.typography['Typography']['body2'].fontWeight,
-  fontSize: theme.typography['Typography']['body2'].fontSize,
-  letterSpacing: theme.typography['Typography']['body2'].letterSpacing,
-  lineHeight: theme.typography['Typography']['body2'].lineHeight,
-  textDecoration: theme.typography['Typography']['body2'].textDecoration,
-  textTransform: theme.typography['Typography']['body2'].textTransform,
-}));
-
-const Typography34: any = styled(Typography)(({ theme }: any) => ({
-  margin: `0px`,
-  color: theme.palette['text']['primary'],
-  fontStyle: theme.typography['Typography']['body2'].fontStyle,
-  fontFamily: theme.typography['Typography']['body2'].fontFamily,
-  fontWeight: theme.typography['Typography']['body2'].fontWeight,
-  fontSize: theme.typography['Typography']['body2'].fontSize,
-  letterSpacing: theme.typography['Typography']['body2'].letterSpacing,
-  lineHeight: theme.typography['Typography']['body2'].lineHeight,
-  textDecoration: theme.typography['Typography']['body2'].textDecoration,
-  textTransform: theme.typography['Typography']['body2'].textTransform,
-}));
-
-const Cell25: any = styled('div')({
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `row`,
-  justifyContent: `flex-start`,
-  alignItems: `center`,
-  padding: `6px 16px`,
-  boxSizing: `border-box`,
-  flex: `1`,
-  margin: `0px`,
-});
-
-const Box18: any = styled('div')({
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `column`,
-  justifyContent: `flex-start`,
-  alignItems: `flex-start`,
-  padding: `0px`,
-  boxSizing: `border-box`,
-  flex: `1`,
-  margin: `0px`,
-});
-
-const Typography35: any = styled(Typography)(({ theme }: any) => ({
-  margin: `0px`,
-}));
-
-const Typography36: any = styled(Typography)(({ theme }: any) => ({
-  margin: `0px`,
-  color: theme.palette['text']['primary'],
-  fontStyle: theme.typography['Typography']['body2'].fontStyle,
-  fontFamily: theme.typography['Typography']['body2'].fontFamily,
-  fontWeight: theme.typography['Typography']['body2'].fontWeight,
-  fontSize: theme.typography['Typography']['body2'].fontSize,
-  letterSpacing: theme.typography['Typography']['body2'].letterSpacing,
-  lineHeight: theme.typography['Typography']['body2'].lineHeight,
-  textDecoration: theme.typography['Typography']['body2'].textDecoration,
-  textTransform: theme.typography['Typography']['body2'].textTransform,
-}));
-
-const Cell35: any = styled('div')({
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `row`,
-  justifyContent: `flex-start`,
-  alignItems: `center`,
-  padding: `6px 0px 6px 16px`,
-  boxSizing: `border-box`,
-  flex: `1`,
-  margin: `0px`,
-});
-
-const Box19: any = styled('div')({
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `column`,
-  justifyContent: `flex-start`,
-  alignItems: `flex-end`,
-  padding: `0px`,
-  boxSizing: `border-box`,
-  flex: `1`,
-  margin: `0px`,
-});
-
-const Typography37: any = styled(Typography)(({ theme }: any) => ({
-  margin: `0px`,
-  color: theme.palette['text']['primary'],
-  fontStyle: theme.typography['Typography']['body2'].fontStyle,
-  fontFamily: theme.typography['Typography']['body2'].fontFamily,
-  fontWeight: theme.typography['Typography']['body2'].fontWeight,
-  fontSize: theme.typography['Typography']['body2'].fontSize,
-  letterSpacing: theme.typography['Typography']['body2'].letterSpacing,
-  lineHeight: theme.typography['Typography']['body2'].lineHeight,
-  textDecoration: theme.typography['Typography']['body2'].textDecoration,
-  textTransform: theme.typography['Typography']['body2'].textTransform,
-}));
-
-const Typography38: any = styled(Typography)(({ theme }: any) => ({
-  margin: `0px`,
-  color: theme.palette['text']['primary'],
-  fontStyle: theme.typography['Typography']['body2'].fontStyle,
-  fontFamily: theme.typography['Typography']['body2'].fontFamily,
-  fontWeight: theme.typography['Typography']['body2'].fontWeight,
-  fontSize: theme.typography['Typography']['body2'].fontSize,
-  letterSpacing: theme.typography['Typography']['body2'].letterSpacing,
-  lineHeight: theme.typography['Typography']['body2'].lineHeight,
-  textDecoration: theme.typography['Typography']['body2'].textDecoration,
-  textTransform: theme.typography['Typography']['body2'].textTransform,
-}));
-
-const DividerHorizontal6: any = styled(Divider)(({ theme }: any) => ({
-  width: `402px`,
-  position: `absolute`,
-  left: `0px`,
-  top: `51px`,
 }));
 
 const DividerVertical: any = styled(Divider)(({ theme }: any) => ({
@@ -1265,7 +255,7 @@ const FormContainer: any = styled('div')({
   width: '50%',
 });
 
-const CardHeader1: any = styled('div')(({ theme }: any) => ({
+const CardHeader2: any = styled('div')(({ theme }: any) => ({
   backgroundColor: theme.palette['colors']['grey']['50'],
   display: `flex`,
   position: `relative`,
@@ -1360,36 +350,7 @@ const FormEntity: any = styled('div')(({ theme }: any) => ({
   margin: `0px`,
 }));
 
-const FormContainer1: any = styled('div')(({ theme }: any) => ({
-  backgroundColor: theme.palette['background']['default'],
-  boxShadow: theme.customShadows['elevation']['1'].boxShadow,
-  borderRadius: `4px`,
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `column`,
-  justifyContent: `flex-start`,
-  alignItems: `flex-start`,
-  padding: `0px`,
-  boxSizing: `border-box`,
-  alignSelf: `stretch`,
-  margin: `0px`,
-}));
-
-const EntityForm: any = styled('div')({
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `column`,
-  justifyContent: `flex-start`,
-  alignItems: `flex-start`,
-  padding: `16px`,
-  boxSizing: `border-box`,
-  alignSelf: `stretch`,
-  margin: `0px`,
-});
-
-const Title: any = styled('div')({
+const FormContainer1: any = styled('div')({
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
@@ -1402,171 +363,22 @@ const Title: any = styled('div')({
   margin: `0px`,
 });
 
-const Typography39: any = styled(Typography)(({ theme }: any) => ({
+const EntityForm1: any = styled(EntityForm)(({ theme }: any) => ({
+  alignSelf: `stretch`,
   margin: `0px`,
-  color: theme.palette['text']['secondary'],
-  fontStyle: theme.typography['Typography']['h4'].fontStyle,
-  fontFamily: theme.typography['Typography']['h4'].fontFamily,
-  fontWeight: theme.typography['Typography']['h4'].fontWeight,
-  fontSize: theme.typography['Typography']['h4'].fontSize,
-  letterSpacing: theme.typography['Typography']['h4'].letterSpacing,
-  lineHeight: theme.typography['Typography']['h4'].lineHeight,
-  textDecoration: theme.typography['Typography']['h4'].textDecoration,
-  textTransform: theme.typography['Typography']['h4'].textTransform,
 }));
 
-const TextField1: any = styled(TextField)(({ theme }: any) => ({
+const CardContent1: any = styled(CardContent)(({ theme }: any) => ({
   alignSelf: `stretch`,
-  margin: `16px 0px 0px 0px`,
-  color: theme.palette['text']['secondary'],
-  fontStyle: theme.typography['Components']['input-label'].fontStyle,
-  fontFamily: theme.typography['Components']['input-label'].fontFamily,
-  fontWeight: theme.typography['Components']['input-label'].fontWeight,
-  fontSize: theme.typography['Components']['input-label'].fontSize,
-  letterSpacing: theme.typography['Components']['input-label'].letterSpacing,
-  lineHeight: theme.typography['Components']['input-label'].lineHeight,
-  textDecoration: theme.typography['Components']['input-label'].textDecoration,
-  textTransform: theme.typography['Components']['input-label'].textTransform,
-}));
-
-const Select1: any = styled(FormControl)(({ theme }: any) => ({
-  alignSelf: `stretch`,
-  margin: `16px 0px 0px 0px`,
-  color: theme.palette['text']['secondary'],
-  fontStyle: theme.typography['Components']['input-label'].fontStyle,
-  fontFamily: theme.typography['Components']['input-label'].fontFamily,
-  fontWeight: theme.typography['Components']['input-label'].fontWeight,
-  fontSize: theme.typography['Components']['input-label'].fontSize,
-  letterSpacing: theme.typography['Components']['input-label'].letterSpacing,
-  lineHeight: theme.typography['Components']['input-label'].lineHeight,
-  textDecoration: theme.typography['Components']['input-label'].textDecoration,
-  textTransform: theme.typography['Components']['input-label'].textTransform,
-}));
-
-const Row: any = styled('div')({
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `row`,
-  justifyContent: `flex-start`,
-  alignItems: `flex-start`,
-  padding: `0px`,
-  boxSizing: `border-box`,
-  alignSelf: `stretch`,
-  margin: `16px 0px 0px 0px`,
-});
-
-const Select2: any = styled(FormControl)(({ theme }: any) => ({
-  flex: `1`,
   margin: `0px`,
-  color: theme.palette['text']['secondary'],
-  fontStyle: theme.typography['Components']['input-label'].fontStyle,
-  fontFamily: theme.typography['Components']['input-label'].fontFamily,
-  fontWeight: theme.typography['Components']['input-label'].fontWeight,
-  fontSize: theme.typography['Components']['input-label'].fontSize,
-  letterSpacing: theme.typography['Components']['input-label'].letterSpacing,
-  lineHeight: theme.typography['Components']['input-label'].lineHeight,
-  textDecoration: theme.typography['Components']['input-label'].textDecoration,
-  textTransform: theme.typography['Components']['input-label'].textTransform,
 }));
 
-const TextField2: any = styled(TextField)(({ theme }: any) => ({
-  flex: `1`,
-  margin: `0px 0px 0px 16px`,
-  color: theme.palette['text']['secondary'],
-  fontStyle: theme.typography['Components']['input-label'].fontStyle,
-  fontFamily: theme.typography['Components']['input-label'].fontFamily,
-  fontWeight: theme.typography['Components']['input-label'].fontWeight,
-  fontSize: theme.typography['Components']['input-label'].fontSize,
-  letterSpacing: theme.typography['Components']['input-label'].letterSpacing,
-  lineHeight: theme.typography['Components']['input-label'].lineHeight,
-  textDecoration: theme.typography['Components']['input-label'].textDecoration,
-  textTransform: theme.typography['Components']['input-label'].textTransform,
-}));
-
-const Row7: any = styled('div')({
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `row`,
-  justifyContent: `flex-start`,
-  alignItems: `flex-start`,
-  padding: `0px`,
-  boxSizing: `border-box`,
+const Card1: any = styled(Card)(({ theme }: any) => ({
   alignSelf: `stretch`,
-  margin: `16px 0px 0px 0px`,
-});
-
-const Select3: any = styled(FormControl)(({ theme }: any) => ({
-  flex: `1`,
   margin: `0px`,
-  color: theme.palette['text']['secondary'],
-  fontStyle: theme.typography['Components']['input-label'].fontStyle,
-  fontFamily: theme.typography['Components']['input-label'].fontFamily,
-  fontWeight: theme.typography['Components']['input-label'].fontWeight,
-  fontSize: theme.typography['Components']['input-label'].fontSize,
-  letterSpacing: theme.typography['Components']['input-label'].letterSpacing,
-  lineHeight: theme.typography['Components']['input-label'].lineHeight,
-  textDecoration: theme.typography['Components']['input-label'].textDecoration,
-  textTransform: theme.typography['Components']['input-label'].textTransform,
 }));
 
-const Select4: any = styled(FormControl)(({ theme }: any) => ({
-  flex: `1`,
-  margin: `0px 0px 0px 16px`,
-  color: theme.palette['text']['secondary'],
-  fontStyle: theme.typography['Components']['input-label'].fontStyle,
-  fontFamily: theme.typography['Components']['input-label'].fontFamily,
-  fontWeight: theme.typography['Components']['input-label'].fontWeight,
-  fontSize: theme.typography['Components']['input-label'].fontSize,
-  letterSpacing: theme.typography['Components']['input-label'].letterSpacing,
-  lineHeight: theme.typography['Components']['input-label'].lineHeight,
-  textDecoration: theme.typography['Components']['input-label'].textDecoration,
-  textTransform: theme.typography['Components']['input-label'].textTransform,
-}));
-
-const Row8: any = styled('div')({
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `row`,
-  justifyContent: `flex-start`,
-  alignItems: `center`,
-  padding: `0px`,
-  boxSizing: `border-box`,
-  alignSelf: `stretch`,
-  margin: `16px 0px 0px 0px`,
-});
-
-const FormControlLabel1: any = styled(FormControlLabel)(({ theme }: any) => ({
-  flex: `1`,
-  margin: `0px`,
-  color: theme.palette['text']['secondary'],
-  fontStyle: theme.typography['Typography']['body1'].fontStyle,
-  fontFamily: theme.typography['Typography']['body1'].fontFamily,
-  fontWeight: theme.typography['Typography']['body1'].fontWeight,
-  fontSize: theme.typography['Typography']['body1'].fontSize,
-  letterSpacing: theme.typography['Typography']['body1'].letterSpacing,
-  lineHeight: theme.typography['Typography']['body1'].lineHeight,
-  textDecoration: theme.typography['Typography']['body1'].textDecoration,
-  textTransform: theme.typography['Typography']['body1'].textTransform,
-}));
-
-const TextField3: any = styled(TextField)(({ theme }: any) => ({
-  flex: `1`,
-  margin: `0px 0px 0px 16px`,
-  color: theme.palette['text']['secondary'],
-  fontStyle: theme.typography['Components']['input-label'].fontStyle,
-  fontFamily: theme.typography['Components']['input-label'].fontFamily,
-  fontWeight: theme.typography['Components']['input-label'].fontWeight,
-  fontSize: theme.typography['Components']['input-label'].fontSize,
-  letterSpacing: theme.typography['Components']['input-label'].letterSpacing,
-  lineHeight: theme.typography['Components']['input-label'].lineHeight,
-  textDecoration: theme.typography['Components']['input-label'].textDecoration,
-  textTransform: theme.typography['Components']['input-label'].textTransform,
-}));
-
-const DividerHorizontal7: any = styled(Divider)(({ theme }: any) => ({
+const DividerHorizontal1: any = styled(Divider)(({ theme }: any) => ({
   alignSelf: `stretch`,
   margin: `0px`,
 }));
@@ -1585,23 +397,7 @@ const FormTax: any = styled('div')(({ theme }: any) => ({
   margin: `0px`,
 }));
 
-const FormContainer2: any = styled('div')(({ theme }: any) => ({
-  backgroundColor: theme.palette['background']['default'],
-  boxShadow: theme.customShadows['elevation']['1'].boxShadow,
-  borderRadius: `4px`,
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `column`,
-  justifyContent: `flex-start`,
-  alignItems: `flex-start`,
-  padding: `16px`,
-  boxSizing: `border-box`,
-  alignSelf: `stretch`,
-  margin: `0px`,
-}));
-
-const Skeleton: any = styled('div')({
+const FormContainer2: any = styled('div')({
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
@@ -1614,22 +410,8 @@ const Skeleton: any = styled('div')({
   margin: `0px`,
 });
 
-const Typography40: any = styled('div')({
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `row`,
-  justifyContent: `flex-start`,
-  alignItems: `flex-start`,
-  padding: `0px`,
-  boxSizing: `border-box`,
+const Typography3: any = styled(Typography)(({ theme }: any) => ({
   margin: `0px`,
-});
-
-const Typography41: any = styled('div')(({ theme }: any) => ({
-  textAlign: `left`,
-  whiteSpace: `pre-wrap`,
-  fontSynthesis: `none`,
   color: theme.palette['text']['secondary'],
   fontStyle: theme.typography['Typography']['h4'].fontStyle,
   fontFamily: theme.typography['Typography']['h4'].fontFamily,
@@ -1639,49 +421,39 @@ const Typography41: any = styled('div')(({ theme }: any) => ({
   lineHeight: theme.typography['Typography']['h4'].lineHeight,
   textDecoration: theme.typography['Typography']['h4'].textDecoration,
   textTransform: theme.typography['Typography']['h4'].textTransform,
-  margin: `0px`,
 }));
 
-const Skeleton1: any = styled('div')(({ theme }: any) => ({
-  backgroundColor: theme.palette['action']['hover'],
-  borderRadius: `4px`,
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `row`,
-  justifyContent: `flex-start`,
-  alignItems: `flex-start`,
+const Skeleton1: any = styled(Skeleton)(({ theme }: any) => ({
   alignSelf: `stretch`,
   height: `30px`,
   margin: `16px 0px 0px 0px`,
 }));
 
-const Skeleton2: any = styled('div')(({ theme }: any) => ({
-  backgroundColor: theme.palette['action']['hover'],
-  borderRadius: `4px`,
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `row`,
-  justifyContent: `flex-start`,
-  alignItems: `flex-start`,
+const Skeleton2: any = styled(Skeleton)(({ theme }: any) => ({
   alignSelf: `stretch`,
   height: `30px`,
   margin: `16px 0px 0px 0px`,
 }));
 
-const Skeleton3: any = styled('div')(({ theme }: any) => ({
-  backgroundColor: theme.palette['action']['hover'],
-  borderRadius: `4px`,
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `row`,
-  justifyContent: `flex-start`,
-  alignItems: `flex-start`,
+const Skeleton3: any = styled(Skeleton)(({ theme }: any) => ({
   height: `30px`,
   width: `160px`,
   margin: `16px 0px 0px 0px`,
+}));
+
+const Stack1: any = styled(Stack)(({ theme }: any) => ({
+  alignSelf: `stretch`,
+  margin: `0px`,
+}));
+
+const CardContent2: any = styled(CardContent)(({ theme }: any) => ({
+  alignSelf: `stretch`,
+  margin: `0px`,
+}));
+
+const Card2: any = styled(Card)(({ theme }: any) => ({
+  alignSelf: `stretch`,
+  margin: `0px`,
 }));
 
 const DividerVertical1: any = styled(Divider)(({ theme }: any) => ({
@@ -1707,7 +479,7 @@ const InvestorContainer: any = styled('div')({
   maxWidth: '25%',
 });
 
-const CardHeader2: any = styled('div')(({ theme }: any) => ({
+const CardHeader3: any = styled('div')(({ theme }: any) => ({
   backgroundColor: theme.palette['background']['default'],
   borderRadius: `0px 6px 0px 0px`,
   display: `flex`,
@@ -1782,12 +554,12 @@ const Button2: any = styled(Button)(({ theme }: any) => ({
   textTransform: `uppercase`,
 }));
 
-const DividerHorizontal8: any = styled(Divider)(({ theme }: any) => ({
+const DividerHorizontal2: any = styled(Divider)(({ theme }: any) => ({
   alignSelf: `stretch`,
   margin: `0px`,
 }));
 
-const Box20: any = styled('div')(({ theme }: any) => ({
+const Box2: any = styled('div')(({ theme }: any) => ({
   backgroundColor: theme.palette['colors']['grey']['50'],
   borderRadius: `0px 0px 6px 0px`,
   display: `flex`,
@@ -1818,13 +590,14 @@ const Button3: any = styled(Button)(({ theme }: any) => ({
 }));
 
 function EntityContainer(props: EntityContainerProps): JSX.Element {
-  const { data } = useEntityContainer();
-
   return (
     <EntityContainer1 className={props.className}>
+      <Helmet>
+        <title>EntityContainer</title>
+      </Helmet>
       <Content>
         <ProfileContainer>
-          <CardHeader>
+          <CardHeader1>
             <Content1>
               <Header>{`Entity`}</Header>
               {false && <Subheader>{`{Subheader}`}</Subheader>}
@@ -1837,7 +610,7 @@ function EntityContainer(props: EntityContainerProps): JSX.Element {
             >
               {'Edit'}
             </Button1>
-          </CardHeader>
+          </CardHeader1>
           <DividerHorizontal orientation="horizontal" />
           <Box1>
             <Frame80>
@@ -1851,265 +624,12 @@ function EntityContainer(props: EntityContainerProps): JSX.Element {
                 {`{Value}`}
               </Typography2>
             </Frame80>
-            <EntityInfoTable>
-              <Row1>
-                <Cell1>
-                  <Box2>
-                    <Typography3 variant={'body2'} gutterBottom={false}>
-                      {'Entity Type'}
-                    </Typography3>
-                    {false && (
-                      <Typography4 variant={'body2'} gutterBottom={false}>
-                        {'Cell'}
-                      </Typography4>
-                    )}
-                  </Box2>
-                </Cell1>
-                {false && (
-                  <Cell2>
-                    <Box3>
-                      <Typography5
-                        variant={'body2'}
-                        gutterBottom={false}
-                      ></Typography5>
-                      {false && (
-                        <Typography6 variant={'body2'} gutterBottom={false}>
-                          {'Cell'}
-                        </Typography6>
-                      )}
-                    </Box3>
-                  </Cell2>
-                )}
-                <Cell3>
-                  <Box4>
-                    <Typography7 variant={'body2'} gutterBottom={false}>
-                      {`{Value}`}
-                    </Typography7>
-                    {false && (
-                      <Typography8 variant={'body2'} gutterBottom={false}>
-                        {'Cell'}
-                      </Typography8>
-                    )}
-                  </Box4>
-                </Cell3>
-                {false && <DividerHorizontal1 orientation="horizontal" />}
-              </Row1>
-              <Row2>
-                <Cell11>
-                  <Box5>
-                    <Typography9 variant={'body2'} gutterBottom={false}>
-                      {'Tax ID'}
-                    </Typography9>
-                    {false && (
-                      <Typography10 variant={'body2'} gutterBottom={false}>
-                        {'Cell'}
-                      </Typography10>
-                    )}
-                  </Box5>
-                </Cell11>
-                {false && (
-                  <Cell21>
-                    <Box6>
-                      <Typography11
-                        variant={'body2'}
-                        gutterBottom={false}
-                      ></Typography11>
-                      {false && (
-                        <Typography12 variant={'body2'} gutterBottom={false}>
-                          {'Cell'}
-                        </Typography12>
-                      )}
-                    </Box6>
-                  </Cell21>
-                )}
-                <Cell31>
-                  <Box7>
-                    <Typography13 variant={'body2'} gutterBottom={false}>
-                      {`{Value}`}
-                    </Typography13>
-                    {false && (
-                      <Typography14 variant={'body2'} gutterBottom={false}>
-                        {'Cell'}
-                      </Typography14>
-                    )}
-                  </Box7>
-                </Cell31>
-                {false && <DividerHorizontal2 orientation="horizontal" />}
-              </Row2>
-              <Row3>
-                <Cell12>
-                  <Box8>
-                    <Typography15 variant={'body2'} gutterBottom={false}>
-                      {'Foreign Investor'}
-                    </Typography15>
-                    {false && (
-                      <Typography16 variant={'body2'} gutterBottom={false}>
-                        {'Cell'}
-                      </Typography16>
-                    )}
-                  </Box8>
-                </Cell12>
-                {false && (
-                  <Cell22>
-                    <Box9>
-                      <Typography17
-                        variant={'body2'}
-                        gutterBottom={false}
-                      ></Typography17>
-                      {false && (
-                        <Typography18 variant={'body2'} gutterBottom={false}>
-                          {'Cell'}
-                        </Typography18>
-                      )}
-                    </Box9>
-                  </Cell22>
-                )}
-                <Cell32>
-                  <Box10>
-                    <Typography19 variant={'body2'} gutterBottom={false}>
-                      {`{Value}`}
-                    </Typography19>
-                    {false && (
-                      <Typography20 variant={'body2'} gutterBottom={false}>
-                        {'Cell'}
-                      </Typography20>
-                    )}
-                  </Box10>
-                </Cell32>
-                {false && <DividerHorizontal3 orientation="horizontal" />}
-              </Row3>
-              <Row4>
-                <Cell13>
-                  <Box11>
-                    <Typography21 variant={'body2'} gutterBottom={false}>
-                      {'Accreditation'}
-                    </Typography21>
-                    {false && (
-                      <Typography22 variant={'body2'} gutterBottom={false}>
-                        {'Cell'}
-                      </Typography22>
-                    )}
-                  </Box11>
-                </Cell13>
-                {false && (
-                  <Cell23>
-                    <Box12>
-                      <Typography23
-                        variant={'body2'}
-                        gutterBottom={false}
-                      ></Typography23>
-                      {false && (
-                        <Typography24 variant={'body2'} gutterBottom={false}>
-                          {'Cell'}
-                        </Typography24>
-                      )}
-                    </Box12>
-                  </Cell23>
-                )}
-                <Cell33>
-                  <Box13>
-                    <Typography25 variant={'body2'} gutterBottom={false}>
-                      {`{Value}`}
-                    </Typography25>
-                    {false && (
-                      <Typography26 variant={'body2'} gutterBottom={false}>
-                        {'Cell'}
-                      </Typography26>
-                    )}
-                  </Box13>
-                </Cell33>
-                {false && <DividerHorizontal4 orientation="horizontal" />}
-              </Row4>
-              <Row5>
-                <Cell14>
-                  <Box14>
-                    <Typography27 variant={'body2'} gutterBottom={false}>
-                      {'Control Person Exempt'}
-                    </Typography27>
-                    {false && (
-                      <Typography28 variant={'body2'} gutterBottom={false}>
-                        {'Cell'}
-                      </Typography28>
-                    )}
-                  </Box14>
-                </Cell14>
-                {false && (
-                  <Cell24>
-                    <Box15>
-                      <Typography29
-                        variant={'body2'}
-                        gutterBottom={false}
-                      ></Typography29>
-                      {false && (
-                        <Typography30 variant={'body2'} gutterBottom={false}>
-                          {'Cell'}
-                        </Typography30>
-                      )}
-                    </Box15>
-                  </Cell24>
-                )}
-                <Cell34>
-                  <Box16>
-                    <Typography31 variant={'body2'} gutterBottom={false}>
-                      {`{Value}`}
-                    </Typography31>
-                    {false && (
-                      <Typography32 variant={'body2'} gutterBottom={false}>
-                        {'Cell'}
-                      </Typography32>
-                    )}
-                  </Box16>
-                </Cell34>
-                {false && <DividerHorizontal5 orientation="horizontal" />}
-              </Row5>
-              <Row6>
-                <Cell15>
-                  <Box17>
-                    <Typography33 variant={'body2'} gutterBottom={false}>
-                      {'Exempt Reason'}
-                    </Typography33>
-                    {false && (
-                      <Typography34 variant={'body2'} gutterBottom={false}>
-                        {'Cell'}
-                      </Typography34>
-                    )}
-                  </Box17>
-                </Cell15>
-                {false && (
-                  <Cell25>
-                    <Box18>
-                      <Typography35
-                        variant={'body2'}
-                        gutterBottom={false}
-                      ></Typography35>
-                      {false && (
-                        <Typography36 variant={'body2'} gutterBottom={false}>
-                          {'Cell'}
-                        </Typography36>
-                      )}
-                    </Box18>
-                  </Cell25>
-                )}
-                <Cell35>
-                  <Box19>
-                    <Typography37 variant={'body2'} gutterBottom={false}>
-                      {`{Value}`}
-                    </Typography37>
-                    {false && (
-                      <Typography38 variant={'body2'} gutterBottom={false}>
-                        {'Cell'}
-                      </Typography38>
-                    )}
-                  </Box19>
-                </Cell35>
-                {false && <DividerHorizontal6 orientation="horizontal" />}
-              </Row6>
-            </EntityInfoTable>
+            <EntityInfoTable1 />
           </Box1>
         </ProfileContainer>
         <DividerVertical orientation="vertical" height={'auto'} />
         <FormContainer>
-          <CardHeader1>
+          <CardHeader2>
             <AvatarWrapper>
               <IconButton1 size={'small'} color={'default'} disabled={false}>
                 <SvgIcon
@@ -2130,111 +650,37 @@ function EntityContainer(props: EntityContainerProps): JSX.Element {
                 ></SvgIcon>
               </IconButton2>
             )}
-          </CardHeader1>
+          </CardHeader2>
           <FormEntity>
             <FormContainer1>
-              <EntityForm>
-                <Title>
-                  <Typography39 variant={'body1'} gutterBottom={false}>
-                    {'Info'}
-                  </Typography39>
-                </Title>
-                <TextField1
-                  variant={'outlined'}
-                  disabled={false}
-                  size={'small'}
-                  label={'Account Name'}
-                />
-                <Select1 variant={'outlined'} size={'small'} disabled={false}>
-                  <InputLabel>{'Entity Type'}</InputLabel>
-                  <Select label={'Entity Type'}>
-                    {data.EntityType.map((item, index) => (
-                      <MenuItem key={index} value={item.value}>
-                        {item.text}
-                      </MenuItem>
-                    ))}
-                  </Select>
-                </Select1>
-                <Row>
-                  <Select2 variant={'outlined'} size={'small'} disabled={false}>
-                    <InputLabel>{'Tax ID Type'}</InputLabel>
-                    <Select label={'Tax ID Type'}>
-                      {data.TaxIdType.map((item, index) => (
-                        <MenuItem key={index} value={item.value}>
-                          {item.text}
-                        </MenuItem>
-                      ))}
-                    </Select>
-                  </Select2>
-                  <TextField2
-                    variant={'outlined'}
-                    disabled={false}
-                    size={'small'}
-                    label={'Number'}
-                  />
-                </Row>
-                <Row7>
-                  <Select3 variant={'outlined'} size={'small'} disabled={false}>
-                    <InputLabel>{'Foreign Investor'}</InputLabel>
-                    <Select label={'Foreign Investor'}>
-                      {data.ForeignInvestorType.map((item, index) => (
-                        <MenuItem key={index} value={item.value}>
-                          {item.text}
-                        </MenuItem>
-                      ))}
-                    </Select>
-                  </Select3>
-                  <Select4 variant={'outlined'} size={'small'} disabled={false}>
-                    <InputLabel>{'Accreditation'}</InputLabel>
-                    <Select label={'Accreditation'}>
-                      {data.AccreditationType.map((item, index) => (
-                        <MenuItem key={index} value={item.value}>
-                          {item.text}
-                        </MenuItem>
-                      ))}
-                    </Select>
-                  </Select4>
-                </Row7>
-                <Row8>
-                  <FormControlLabel1
-                    control={
-                      <Checkbox
-                        indeterminate={false}
-                        disabled={false}
-                        size={'small'}
-                        color={'primary'}
-                        defaultChecked={false}
-                      ></Checkbox>
-                    }
-                    label={'Control Person Exempt'}
-                  />
-                  <TextField3
-                    variant={'outlined'}
-                    disabled={false}
-                    size={'small'}
-                    label={'Exempt Reason'}
-                  />
-                </Row8>
-              </EntityForm>
+              <Card1>
+                <CardContent1>
+                  <EntityForm1 />
+                </CardContent1>
+              </Card1>
             </FormContainer1>
           </FormEntity>
-          <DividerHorizontal7 orientation="horizontal" />
+          <DividerHorizontal1 orientation="horizontal" />
           <FormTax>
             <FormContainer2>
-              <Skeleton>
-                <Typography40>
-                  <Typography41>{`Tax`}</Typography41>
-                </Typography40>
-                <Skeleton1></Skeleton1>
-                <Skeleton2></Skeleton2>
-                <Skeleton3></Skeleton3>
-              </Skeleton>
+              <Card2>
+                <CardContent2>
+                  <Stack1 direction={'column'} spacing={0}>
+                    <Typography3 variant={'body1'} gutterBottom={false}>
+                      {'Tax'}
+                    </Typography3>
+                    <Skeleton1 variant={'rectangle'} width={370} height={30} />
+                    <Skeleton2 variant={'rectangle'} width={370} height={30} />
+                    <Skeleton3 variant={'rectangle'} width={160} height={30} />
+                  </Stack1>
+                </CardContent2>
+              </Card2>
             </FormContainer2>
           </FormTax>
         </FormContainer>
         <DividerVertical1 orientation="vertical" height={'auto'} />
         <InvestorContainer>
-          <CardHeader2>
+          <CardHeader3>
             <Content2>
               <Header2>{`Individual Investors`}</Header2>
               {false && <Subheader2>{`{Subheader}`}</Subheader2>}
@@ -2249,9 +695,9 @@ function EntityContainer(props: EntityContainerProps): JSX.Element {
                 {'Edit'}
               </Button2>
             )}
-          </CardHeader2>
-          <DividerHorizontal8 orientation="horizontal" />
-          <Box20>
+          </CardHeader3>
+          <DividerHorizontal2 orientation="horizontal" />
+          <Box2>
             <Button3
               size={'medium'}
               color={'primary'}
@@ -2266,7 +712,7 @@ function EntityContainer(props: EntityContainerProps): JSX.Element {
             >
               {'Add Individual'}
             </Button3>
-          </Box20>
+          </Box2>
         </InvestorContainer>
       </Content>
     </EntityContainer1>
