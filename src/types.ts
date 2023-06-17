@@ -14,9 +14,11 @@
  **********************************************************************/
 
 
+
 export interface EntityContainerProps {
   className?: any;
 }
+
 
 
 export interface EntityInfoTableProps {
@@ -24,9 +26,11 @@ export interface EntityInfoTableProps {
 }
 
 
+
 export interface FormEntityProps {
   className?: any;
 }
+
 
 
 export interface SignOnProps {
