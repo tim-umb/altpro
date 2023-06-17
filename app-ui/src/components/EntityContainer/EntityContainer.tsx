@@ -39,7 +39,7 @@ const EntityContainer1: any = styled('div')({
   position: `relative`,
   isolation: `isolate`,
   flexDirection: `column`,
-  width: '100vw',
+  width: '100%',
   justifyContent: `flex-start`,
   alignItems: `flex-start`,
   padding: `0px`,
@@ -233,6 +233,7 @@ const EntityInfoTable1: any = styled(EntityInfoTable)(({ theme }: any) => ({
 }));
 
 const DividerVertical: any = styled(Divider)(({ theme }: any) => ({
+  alignSelf: `stretch`,
   zIndex: `3`,
   margin: `0px`,
   height: 'auto',
