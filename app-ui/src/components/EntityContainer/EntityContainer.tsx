@@ -427,11 +427,12 @@ const Skeleton2: any = styled(Skeleton)(({ theme }: any) => ({
   alignSelf: `stretch`,
   height: `30px`,
   margin: `16px 0px 0px 0px`,
+  width: '100%',
 }));
 
 const Skeleton3: any = styled(Skeleton)(({ theme }: any) => ({
   height: `30px`,
-  width: `160px`,
+  width: '25%',
   margin: `16px 0px 0px 0px`,
 }));
 
@@ -663,8 +664,18 @@ function EntityContainer(props: EntityContainerProps): JSX.Element {
                       height={30}
                       width={'100%'}
                     />
-                    <Skeleton2 variant={'text'} width={604} height={30} />
-                    <Skeleton3 variant={'text'} width={160} height={30} />
+                    <Skeleton2
+                      variant={'text'}
+                      width={604}
+                      height={30}
+                      width={'100%'}
+                    />
+                    <Skeleton3
+                      variant={'text'}
+                      width={160}
+                      height={30}
+                      width={'25%'}
+                    />
                   </Stack1>
                 </CardContent2>
               </Card2>
