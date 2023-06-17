@@ -44,7 +44,7 @@ const EntityContainer1: any = styled('div')({
   alignItems: `flex-start`,
   padding: `0px`,
   boxSizing: `border-box`,
-  height: 'auto',
+  height: `707px`,
 });
 
 const Content: any = styled('div')(({ theme }: any) => ({
