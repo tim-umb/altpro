@@ -22,10 +22,8 @@ import {
   Checkbox,
   FormControlLabel,
 } from '@mui/material';
-import MenuItem from '@mui/material/MenuItem';
 import { styled } from '@mui/material/styles';
 import { EntityFormProps } from 'src/types';
-import useEntityForm from 'src/components/EntityForm/useEntityForm';
 
 const EntityForm1: any = styled('div')({
   display: `flex`,
@@ -218,8 +216,6 @@ const TextField3: any = styled(TextField)(({ theme }: any) => ({
 }));
 
 function EntityForm(props: EntityFormProps): JSX.Element {
-  const { data } = useEntityForm();
-
   return (
     <EntityForm1 className={props.className}>
       <Title>
@@ -233,15 +229,14 @@ function EntityForm(props: EntityFormProps): JSX.Element {
         size={'small'}
         label={'Account Name'}
       />
-      <Select1 variant={'outlined'} size={'small'} disabled={false}>
+      <Select1
+        options={[{ value: 'Quest', text: 'MadeWithQuest' }]}
+        variant={'outlined'}
+        size={'small'}
+        disabled={false}
+      >
         <InputLabel>{'Entity Type'}</InputLabel>
-        <Select label={'Entity Type'}>
-          {data.entityType.map((item, index) => (
-            <MenuItem key={index} value={item.value}>
-              {item.text}
-            </MenuItem>
-          ))}
-        </Select>
+        <Select label={'Entity Type'}></Select>
       </Select1>
       <Row>
         <Select2

@@ -15,20 +15,23 @@
 
 
 
+
+export interface EntityFormProps {
+  className?: any;
+  item: String;
+  index: Number;
+}
+
+
+
 export interface EntityContainerProps {
   className?: any;
 }
 
 
 
+
 export interface EntityInfoTableProps {
   className?: any;
-}
-
-
-export interface EntityFormProps {
-  className?: any;
-  item: String;
-  index: Number;
 }
 
