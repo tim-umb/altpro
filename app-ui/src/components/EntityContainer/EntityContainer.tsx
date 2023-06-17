@@ -39,7 +39,7 @@ const EntityContainer1: any = styled('div')({
   position: `relative`,
   isolation: `isolate`,
   flexDirection: `column`,
-  width: 'fit-content',
+  width: '100%',
   justifyContent: `flex-start`,
   alignItems: `flex-start`,
   padding: `0px`,
@@ -74,7 +74,7 @@ const ProfileContainer: any = styled('div')({
   flex: `1`,
   zIndex: `4`,
   margin: `0px`,
-  width: '25%',
+  maxWidth: '25%',
 });
 
 const CardHeader1: any = styled('div')(({ theme }: any) => ({
@@ -475,7 +475,7 @@ const InvestorContainer: any = styled('div')({
   flex: `1`,
   zIndex: `0`,
   margin: `0px`,
-  width: '25%',
+  maxWidth: '25%',
 });
 
 const CardHeader3: any = styled('div')(({ theme }: any) => ({
