@@ -28,7 +28,6 @@ import {
 import CloseIcon from '@mui/icons-material/Close';
 import StarIcon from '@mui/icons-material/Star';
 import AddIcon from '@mui/icons-material/Add';
-import { Helmet } from 'react-helmet-async';
 import { styled } from '@mui/material/styles';
 import EntityInfoTable from 'src/components/EntityInfoTable/EntityInfoTable';
 import EntityForm from 'src/components/EntityForm/EntityForm';
@@ -237,6 +236,7 @@ const DividerVertical: any = styled(Divider)(({ theme }: any) => ({
   alignSelf: `stretch`,
   zIndex: `3`,
   margin: `0px`,
+  borderRightWidth: '.1rem',
   height: 'auto',
 }));
 
@@ -579,9 +579,6 @@ const Button3: any = styled(Button)(({ theme }: any) => ({
 function EntityContainer(props: EntityContainerProps): JSX.Element {
   return (
     <EntityContainer1 className={props.className}>
-      <Helmet>
-        <title>EntityContainer</title>
-      </Helmet>
       <Content>
         <ProfileContainer>
           <ProfileContainerHead>
@@ -614,7 +611,11 @@ function EntityContainer(props: EntityContainerProps): JSX.Element {
             <InfoTable1 />
           </ProfileContent>
         </ProfileContainer>
-        <DividerVertical orientation="vertical" height={'auto'} />
+        <DividerVertical
+          orientation="vertical"
+          height={'auto'}
+          borderRightWidth={'.1rem'}
+        />
         <FormContainer>
           <FormContainerHeader>
             <AvatarWrapper>

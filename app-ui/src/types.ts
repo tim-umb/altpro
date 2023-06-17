@@ -13,6 +13,13 @@
  *
  **********************************************************************/
 
+
+export interface EntityContainerProps {
+  className?: any;
+}
+
+
+
 export interface EntityFormProps {
   className?: any;
   index?: number;
@@ -20,10 +27,6 @@ export interface EntityFormProps {
   text: string;
 }
 
-
-export interface EntityContainerProps {
-  className?: any;
-}
 
 
 export interface EntityInfoTableProps {
