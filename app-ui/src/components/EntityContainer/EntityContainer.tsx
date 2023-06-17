@@ -39,7 +39,7 @@ const EntityContainer1: any = styled('div')({
   position: `relative`,
   isolation: `isolate`,
   flexDirection: `column`,
-  width: '100%',
+  width: '100vw',
   justifyContent: `flex-start`,
   alignItems: `flex-start`,
   padding: `0px`,
@@ -235,6 +235,7 @@ const EntityInfoTable1: any = styled(EntityInfoTable)(({ theme }: any) => ({
 const DividerVertical: any = styled(Divider)(({ theme }: any) => ({
   zIndex: `3`,
   margin: `0px`,
+  height: 'auto',
 }));
 
 const FormContainer: any = styled('div')({
@@ -620,7 +621,7 @@ function EntityContainer(props: EntityContainerProps): JSX.Element {
             <EntityInfoTable1 />
           </Box1>
         </ProfileContainer>
-        <DividerVertical orientation="vertical" />
+        <DividerVertical orientation="vertical" height={'auto'} />
         <FormContainer>
           <CardHeader2>
             <AvatarWrapper>
