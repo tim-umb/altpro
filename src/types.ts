@@ -13,18 +13,22 @@
  *
  **********************************************************************/
 
-export interface SignOnProps {
-  className?: any;
-}
 
 export interface EntityContainerProps {
   className?: any;
 }
 
+
 export interface EntityInfoTableProps {
   className?: any;
 }
 
+
 export interface FormEntityProps {
+  className?: any;
+}
+
+
+export interface SignOnProps {
   className?: any;
 }

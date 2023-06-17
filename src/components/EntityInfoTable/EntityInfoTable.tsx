@@ -14,7 +14,7 @@
 
 import React from 'react';
 import { styled } from '@mui/material/styles';
-import Table from 'src/components/Table/Table';
+import TableCellRow from 'src/components/TableCellRow/TableCellRow';
 import { EntityInfoTableProps } from 'src/types';
 
 const EntityInfoTable1: any = styled('div')({
@@ -30,7 +30,32 @@ const EntityInfoTable1: any = styled('div')({
   height: 'auto',
 });
 
-const Table1: any = styled(Table)(({ theme }: any) => ({
+const Row1: any = styled(TableCellRow)(({ theme }: any) => ({
+  alignSelf: `stretch`,
+  margin: `0px`,
+}));
+
+const Row2: any = styled(TableCellRow)(({ theme }: any) => ({
+  alignSelf: `stretch`,
+  margin: `0px`,
+}));
+
+const Row3: any = styled(TableCellRow)(({ theme }: any) => ({
+  alignSelf: `stretch`,
+  margin: `0px`,
+}));
+
+const Row4: any = styled(TableCellRow)(({ theme }: any) => ({
+  alignSelf: `stretch`,
+  margin: `0px`,
+}));
+
+const Row5: any = styled(TableCellRow)(({ theme }: any) => ({
+  alignSelf: `stretch`,
+  margin: `0px`,
+}));
+
+const Row6: any = styled(TableCellRow)(({ theme }: any) => ({
   alignSelf: `stretch`,
   margin: `0px`,
 }));
@@ -38,7 +63,12 @@ const Table1: any = styled(Table)(({ theme }: any) => ({
 function EntityInfoTable(props: EntityInfoTableProps): JSX.Element {
   return (
     <EntityInfoTable1 className={props.className}>
-      <Table1 />
+      <Row1 />
+      <Row2 />
+      <Row3 />
+      <Row4 />
+      <Row5 />
+      <Row6 />
     </EntityInfoTable1>
   );
 }
