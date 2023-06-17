@@ -232,6 +232,7 @@ const EntityInfoTable1: any = styled(EntityInfoTable)(({ theme }: any) => ({
 const DividerVertical: any = styled(Divider)(({ theme }: any) => ({
   alignSelf: `stretch`,
   margin: `0px`,
+  height: 'auto',
 }));
 
 const FormContainer: any = styled('div')({
@@ -451,6 +452,7 @@ const Card2: any = styled(Card)(({ theme }: any) => ({
 const DividerVertical1: any = styled(Divider)(({ theme }: any) => ({
   alignSelf: `stretch`,
   margin: `0px`,
+  height: 'auto',
 }));
 
 const InvestorContainer: any = styled('div')({
@@ -612,7 +614,7 @@ function EntityContainer(props: EntityContainerProps): JSX.Element {
             <EntityInfoTable1 />
           </Box1>
         </ProfileContainer>
-        <DividerVertical orientation="vertical" />
+        <DividerVertical orientation="vertical" height={'auto'} />
         <FormContainer>
           <CardHeader2>
             <AvatarWrapper>
@@ -663,7 +665,7 @@ function EntityContainer(props: EntityContainerProps): JSX.Element {
             </FormContainer2>
           </FormTax>
         </FormContainer>
-        <DividerVertical1 orientation="vertical" />
+        <DividerVertical1 orientation="vertical" height={'auto'} />
         <InvestorContainer>
           <CardHeader3>
             <Content2>
