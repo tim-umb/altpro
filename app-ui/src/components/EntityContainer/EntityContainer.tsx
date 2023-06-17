@@ -24,7 +24,6 @@ import {
   CardContent,
   Stack,
   Skeleton,
-  Dialog,
 } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 import StarIcon from '@mui/icons-material/Star';
@@ -33,7 +32,6 @@ import { styled } from '@mui/material/styles';
 import EntityInfoTable from 'src/components/EntityInfoTable/EntityInfoTable';
 import EntityForm from 'src/components/EntityForm/EntityForm';
 import { EntityContainerProps } from 'src/types';
-import useEntityContainer from 'src/components/EntityContainer/useEntityContainer';
 
 const EntityContainer1: any = styled('div')({
   display: `flex`,
@@ -582,8 +580,6 @@ const Button3: any = styled(Button)(({ theme }: any) => ({
 }));
 
 function EntityContainer(props: EntityContainerProps): JSX.Element {
-  const { fns } = useEntityContainer();
-
   return (
     <EntityContainer1 className={props.className}>
       <Content>
@@ -622,24 +618,12 @@ function EntityContainer(props: EntityContainerProps): JSX.Element {
         <FormContainer>
           <CardHeader2>
             <AvatarWrapper>
-              <Dialog
-                id={'test_dialog'}
-                maxWidth={'200px'}
-                open={'isOpen'}
-                onClose={fns.handleCloseDialog}
-              >
-                <IconButton1
-                  size={'small'}
-                  color={'default'}
-                  disabled={false}
-                  onClick={props.isOpen}
-                >
-                  <SvgIcon
-                    component={CloseIcon}
-                    htmlColor={`rgba(0, 0, 0, 0.56)`}
-                  ></SvgIcon>
-                </IconButton1>
-              </Dialog>
+              <IconButton1 size={'small'} color={'default'} disabled={false}>
+                <SvgIcon
+                  component={CloseIcon}
+                  htmlColor={`rgba(0, 0, 0, 0.56)`}
+                ></SvgIcon>
+              </IconButton1>
             </AvatarWrapper>
             <Text>
               <Header1>{`Add Entity`}</Header1>
