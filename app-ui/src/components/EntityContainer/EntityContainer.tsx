@@ -38,7 +38,7 @@ const EntityContainer1: any = styled('div')({
   position: `relative`,
   isolation: `isolate`,
   flexDirection: `column`,
-  width: `1400px`,
+  width: '100vw',
   justifyContent: `flex-start`,
   alignItems: `flex-start`,
   padding: `0px`,
@@ -244,7 +244,7 @@ const FormContainer: any = styled('div')({
   alignItems: `flex-start`,
   padding: `0px`,
   boxSizing: `border-box`,
-  width: `700px`,
+  width: '50%',
   margin: `0px`,
 });
 
