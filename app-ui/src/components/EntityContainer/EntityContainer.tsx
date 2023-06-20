@@ -18,6 +18,7 @@ import {
   Divider,
   Typography,
   Avatar,
+  Chip,
   IconButton,
   SvgIcon,
   Card,
@@ -28,7 +29,6 @@ import {
 import CloseIcon from '@mui/icons-material/Close';
 import StarIcon from '@mui/icons-material/Star';
 import AddIcon from '@mui/icons-material/Add';
-import { Helmet } from 'react-helmet-async';
 import { styled } from '@mui/material/styles';
 import EntityInfoTable from 'src/components/EntityInfoTable/EntityInfoTable';
 import EntityForm from 'src/components/EntityForm/EntityForm';
@@ -107,19 +107,19 @@ const Content1: any = styled('div')({
   margin: `0px`,
 });
 
-const Header: any = styled('div')(({ theme }: any) => ({
+const Entity: any = styled('div')(({ theme }: any) => ({
   textAlign: `left`,
   whiteSpace: `pre-wrap`,
   fontSynthesis: `none`,
   color: theme.palette['text']['primary'],
-  fontStyle: theme.typography['Typography']['h4'].fontStyle,
-  fontFamily: theme.typography['Typography']['h4'].fontFamily,
-  fontWeight: theme.typography['Typography']['h4'].fontWeight,
-  fontSize: theme.typography['Typography']['h4'].fontSize,
-  letterSpacing: theme.typography['Typography']['h4'].letterSpacing,
-  lineHeight: theme.typography['Typography']['h4'].lineHeight,
-  textDecoration: theme.typography['Typography']['h4'].textDecoration,
-  textTransform: theme.typography['Typography']['h4'].textTransform,
+  fontStyle: theme.typography['Typography']['h5'].fontStyle,
+  fontFamily: theme.typography['Typography']['h5'].fontFamily,
+  fontWeight: theme.typography['Typography']['h5'].fontWeight,
+  fontSize: theme.typography['Typography']['h5'].fontSize,
+  letterSpacing: theme.typography['Typography']['h5'].letterSpacing,
+  lineHeight: theme.typography['Typography']['h5'].lineHeight,
+  textDecoration: theme.typography['Typography']['h5'].textDecoration,
+  textTransform: theme.typography['Typography']['h5'].textTransform,
   margin: `0px`,
 }));
 
@@ -128,14 +128,14 @@ const Subheader: any = styled('div')(({ theme }: any) => ({
   whiteSpace: `pre-wrap`,
   fontSynthesis: `none`,
   color: theme.palette['text']['secondary'],
-  fontStyle: theme.typography['Typography']['body2'].fontStyle,
-  fontFamily: theme.typography['Typography']['body2'].fontFamily,
-  fontWeight: theme.typography['Typography']['body2'].fontWeight,
-  fontSize: theme.typography['Typography']['body2'].fontSize,
-  letterSpacing: theme.typography['Typography']['body2'].letterSpacing,
-  lineHeight: theme.typography['Typography']['body2'].lineHeight,
-  textDecoration: theme.typography['Typography']['body2'].textDecoration,
-  textTransform: theme.typography['Typography']['body2'].textTransform,
+  fontStyle: theme.typography['Typography']['body1'].fontStyle,
+  fontFamily: theme.typography['Typography']['body1'].fontFamily,
+  fontWeight: theme.typography['Typography']['body1'].fontWeight,
+  fontSize: theme.typography['Typography']['body1'].fontSize,
+  letterSpacing: theme.typography['Typography']['body1'].letterSpacing,
+  lineHeight: theme.typography['Typography']['body1'].lineHeight,
+  textDecoration: theme.typography['Typography']['body1'].textDecoration,
+  textTransform: theme.typography['Typography']['body1'].textTransform,
   alignSelf: `stretch`,
   margin: `0px`,
 }));
@@ -155,6 +155,7 @@ const Button1: any = styled(Button)(({ theme }: any) => ({
 
 const DividerHorizontal: any = styled(Divider)(({ theme }: any) => ({
   alignSelf: `stretch`,
+  height: `1px`,
   margin: `0px`,
 }));
 
@@ -186,7 +187,7 @@ const ProfileContentHeader: any = styled('div')({
   margin: `0px`,
 });
 
-const Typography1: any = styled(Typography)(({ theme }: any) => ({
+const EntityName: any = styled(Typography)(({ theme }: any) => ({
   margin: `0px`,
   color: theme.palette['text']['primary'],
   fontStyle: theme.typography['Typography']['h3'].fontStyle,
@@ -200,7 +201,7 @@ const Typography1: any = styled(Typography)(({ theme }: any) => ({
 }));
 
 const Avatar1: any = styled(Avatar)(({ theme }: any) => ({
-  margin: `32px 0px 0px 0px`,
+  margin: `24px 0px 0px 0px`,
   color: theme.palette['background']['paper-elevation-0'],
   fontStyle: theme.typography['Components']['avatar-initials'].fontStyle,
   fontFamily: theme.typography['Components']['avatar-initials'].fontFamily,
@@ -215,9 +216,34 @@ const Avatar1: any = styled(Avatar)(({ theme }: any) => ({
     theme.typography['Components']['avatar-initials'].textTransform,
 }));
 
-const Typography2: any = styled(Typography)(({ theme }: any) => ({
-  margin: `32px 0px 0px 0px`,
+const Frame1: any = styled('div')({
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `column`,
+  justifyContent: `flex-start`,
+  alignItems: `center`,
+  padding: `0px`,
+  boxSizing: `border-box`,
+  margin: `24px 0px 0px 0px`,
+});
+
+const Typography1: any = styled(Typography)(({ theme }: any) => ({
+  margin: `0px`,
   color: theme.palette['text']['primary'],
+  fontStyle: `normal`,
+  fontFamily: `Roboto`,
+  fontWeight: `500`,
+  fontSize: `14px`,
+  letterSpacing: `0.17000000178813934px`,
+  textDecoration: `none`,
+  lineHeight: `24px`,
+  textTransform: `uppercase`,
+}));
+
+const Typography2: any = styled(Typography)(({ theme }: any) => ({
+  margin: `0px`,
+  color: theme.palette['text']['secondary'],
   fontStyle: theme.typography['Typography']['body1'].fontStyle,
   fontFamily: theme.typography['Typography']['body1'].fontFamily,
   fontWeight: theme.typography['Typography']['body1'].fontWeight,
@@ -226,6 +252,70 @@ const Typography2: any = styled(Typography)(({ theme }: any) => ({
   lineHeight: theme.typography['Typography']['body1'].lineHeight,
   textDecoration: theme.typography['Typography']['body1'].textDecoration,
   textTransform: theme.typography['Typography']['body1'].textTransform,
+}));
+
+const Tags: any = styled('div')({
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `column`,
+  justifyContent: `flex-start`,
+  alignItems: `center`,
+  padding: `16px 0px`,
+  boxSizing: `border-box`,
+  alignSelf: `stretch`,
+  margin: `16px 0px 0px 0px`,
+});
+
+const Frame2: any = styled('div')({
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `row`,
+  justifyContent: `flex-start`,
+  alignItems: `flex-start`,
+  padding: `0px`,
+  boxSizing: `border-box`,
+  margin: `0px`,
+});
+
+const Chip1: any = styled(Chip)(({ theme }: any) => ({
+  margin: `0px`,
+  color: theme.palette['text']['secondary'],
+  fontStyle: `normal`,
+  fontFamily: `Roboto`,
+  fontWeight: `400`,
+  fontSize: `13px`,
+  letterSpacing: `0.1599999964237213px`,
+  textDecoration: `none`,
+  lineHeight: `18px`,
+  textTransform: `none`,
+}));
+
+const Chip2: any = styled(Chip)(({ theme }: any) => ({
+  margin: `0px 0px 0px 8px`,
+  color: theme.palette['text']['secondary'],
+  fontStyle: `normal`,
+  fontFamily: `Roboto`,
+  fontWeight: `400`,
+  fontSize: `13px`,
+  letterSpacing: `0.1599999964237213px`,
+  textDecoration: `none`,
+  lineHeight: `18px`,
+  textTransform: `none`,
+}));
+
+const Chip3: any = styled(Chip)(({ theme }: any) => ({
+  margin: `8px 0px 0px 0px`,
+  color: theme.palette['text']['secondary'],
+  fontStyle: `normal`,
+  fontFamily: `Roboto`,
+  fontWeight: `400`,
+  fontSize: `13px`,
+  letterSpacing: `0.1599999964237213px`,
+  textDecoration: `none`,
+  lineHeight: `18px`,
+  textTransform: `none`,
 }));
 
 const InfoTable1: any = styled(EntityInfoTable)(({ theme }: any) => ({
@@ -241,7 +331,8 @@ const DividerVertical: any = styled(Divider)(({ theme }: any) => ({
   height: 'auto',
 }));
 
-const FormContainer: any = styled('div')({
+const FormContainer: any = styled('div')(({ theme }: any) => ({
+  backgroundColor: theme.palette['colors']['grey']['100'],
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
@@ -254,10 +345,9 @@ const FormContainer: any = styled('div')({
   zIndex: `2`,
   margin: `0px`,
   width: '50%',
-});
+}));
 
-const FormContainerHeader: any = styled('div')(({ theme }: any) => ({
-  backgroundColor: theme.palette['colors']['grey']['50'],
+const FormContainerHeader: any = styled('div')({
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
@@ -269,7 +359,7 @@ const FormContainerHeader: any = styled('div')(({ theme }: any) => ({
   alignSelf: `stretch`,
   height: `56px`,
   margin: `0px`,
-}));
+});
 
 const AvatarWrapper: any = styled('div')({
   display: `flex`,
@@ -300,7 +390,7 @@ const Text: any = styled('div')({
   margin: `0px`,
 });
 
-const Header1: any = styled('div')(({ theme }: any) => ({
+const Header: any = styled('div')(({ theme }: any) => ({
   textAlign: `left`,
   whiteSpace: `pre-wrap`,
   fontSynthesis: `none`,
@@ -321,14 +411,14 @@ const Subheader1: any = styled('div')(({ theme }: any) => ({
   whiteSpace: `pre-wrap`,
   fontSynthesis: `none`,
   color: theme.palette['text']['secondary'],
-  fontStyle: theme.typography['Typography']['body2'].fontStyle,
-  fontFamily: theme.typography['Typography']['body2'].fontFamily,
-  fontWeight: theme.typography['Typography']['body2'].fontWeight,
-  fontSize: theme.typography['Typography']['body2'].fontSize,
-  letterSpacing: theme.typography['Typography']['body2'].letterSpacing,
-  lineHeight: theme.typography['Typography']['body2'].lineHeight,
-  textDecoration: theme.typography['Typography']['body2'].textDecoration,
-  textTransform: theme.typography['Typography']['body2'].textTransform,
+  fontStyle: theme.typography['Typography']['body1'].fontStyle,
+  fontFamily: theme.typography['Typography']['body1'].fontFamily,
+  fontWeight: theme.typography['Typography']['body1'].fontWeight,
+  fontSize: theme.typography['Typography']['body1'].fontSize,
+  letterSpacing: theme.typography['Typography']['body1'].letterSpacing,
+  lineHeight: theme.typography['Typography']['body1'].lineHeight,
+  textDecoration: theme.typography['Typography']['body1'].textDecoration,
+  textTransform: theme.typography['Typography']['body1'].textTransform,
   alignSelf: `stretch`,
   margin: `0px`,
 }));
@@ -350,8 +440,7 @@ const FormContent: any = styled('div')({
   margin: `0px`,
 });
 
-const FormContainer1: any = styled('div')(({ theme }: any) => ({
-  backgroundColor: theme.palette['colors']['grey']['50'],
+const FormContainer1: any = styled('div')({
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
@@ -362,7 +451,7 @@ const FormContainer1: any = styled('div')(({ theme }: any) => ({
   boxSizing: `border-box`,
   alignSelf: `stretch`,
   margin: `0px`,
-}));
+});
 
 const EntityForm1: any = styled(EntityForm)(({ theme }: any) => ({
   alignSelf: `stretch`,
@@ -381,11 +470,11 @@ const Card1: any = styled(Card)(({ theme }: any) => ({
 
 const DividerHorizontal1: any = styled(Divider)(({ theme }: any) => ({
   alignSelf: `stretch`,
+  height: `1px`,
   margin: `0px`,
 }));
 
-const FormContainer2: any = styled('div')(({ theme }: any) => ({
-  backgroundColor: theme.palette['colors']['grey']['50'],
+const FormContainer2: any = styled('div')({
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
@@ -396,19 +485,19 @@ const FormContainer2: any = styled('div')(({ theme }: any) => ({
   boxSizing: `border-box`,
   alignSelf: `stretch`,
   margin: `0px`,
-}));
+});
 
 const Typography3: any = styled(Typography)(({ theme }: any) => ({
   margin: `0px`,
   color: theme.palette['text']['secondary'],
-  fontStyle: theme.typography['Typography']['h4'].fontStyle,
-  fontFamily: theme.typography['Typography']['h4'].fontFamily,
-  fontWeight: theme.typography['Typography']['h4'].fontWeight,
-  fontSize: theme.typography['Typography']['h4'].fontSize,
-  letterSpacing: theme.typography['Typography']['h4'].letterSpacing,
-  lineHeight: theme.typography['Typography']['h4'].lineHeight,
-  textDecoration: theme.typography['Typography']['h4'].textDecoration,
-  textTransform: theme.typography['Typography']['h4'].textTransform,
+  fontStyle: theme.typography['Typography']['h5'].fontStyle,
+  fontFamily: theme.typography['Typography']['h5'].fontFamily,
+  fontWeight: theme.typography['Typography']['h5'].fontWeight,
+  fontSize: theme.typography['Typography']['h5'].fontSize,
+  letterSpacing: theme.typography['Typography']['h5'].letterSpacing,
+  lineHeight: theme.typography['Typography']['h5'].lineHeight,
+  textDecoration: theme.typography['Typography']['h5'].textDecoration,
+  textTransform: theme.typography['Typography']['h5'].textTransform,
 }));
 
 const Skeleton1: any = styled(Skeleton)(({ theme }: any) => ({
@@ -451,7 +540,8 @@ const DividerVertical1: any = styled(Divider)(({ theme }: any) => ({
   height: 'auto',
 }));
 
-const InvestorContainer: any = styled('div')({
+const InvestorContainer: any = styled('div')(({ theme }: any) => ({
+  backgroundColor: theme.palette['colors']['grey']['100'],
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
@@ -465,7 +555,7 @@ const InvestorContainer: any = styled('div')({
   zIndex: `0`,
   margin: `0px`,
   maxWidth: '25%',
-});
+}));
 
 const InvestorContainerHea: any = styled('div')(({ theme }: any) => ({
   backgroundColor: theme.palette['background']['default'],
@@ -496,19 +586,19 @@ const Content2: any = styled('div')({
   margin: `0px`,
 });
 
-const Header2: any = styled('div')(({ theme }: any) => ({
+const IndividualInvestors: any = styled('div')(({ theme }: any) => ({
   textAlign: `left`,
   whiteSpace: `pre-wrap`,
   fontSynthesis: `none`,
   color: theme.palette['text']['primary'],
-  fontStyle: theme.typography['Typography']['h4'].fontStyle,
-  fontFamily: theme.typography['Typography']['h4'].fontFamily,
-  fontWeight: theme.typography['Typography']['h4'].fontWeight,
-  fontSize: theme.typography['Typography']['h4'].fontSize,
-  letterSpacing: theme.typography['Typography']['h4'].letterSpacing,
-  lineHeight: theme.typography['Typography']['h4'].lineHeight,
-  textDecoration: theme.typography['Typography']['h4'].textDecoration,
-  textTransform: theme.typography['Typography']['h4'].textTransform,
+  fontStyle: theme.typography['Typography']['h5'].fontStyle,
+  fontFamily: theme.typography['Typography']['h5'].fontFamily,
+  fontWeight: theme.typography['Typography']['h5'].fontWeight,
+  fontSize: theme.typography['Typography']['h5'].fontSize,
+  letterSpacing: theme.typography['Typography']['h5'].letterSpacing,
+  lineHeight: theme.typography['Typography']['h5'].lineHeight,
+  textDecoration: theme.typography['Typography']['h5'].textDecoration,
+  textTransform: theme.typography['Typography']['h5'].textTransform,
   margin: `0px`,
 }));
 
@@ -517,14 +607,14 @@ const Subheader2: any = styled('div')(({ theme }: any) => ({
   whiteSpace: `pre-wrap`,
   fontSynthesis: `none`,
   color: theme.palette['text']['secondary'],
-  fontStyle: theme.typography['Typography']['body2'].fontStyle,
-  fontFamily: theme.typography['Typography']['body2'].fontFamily,
-  fontWeight: theme.typography['Typography']['body2'].fontWeight,
-  fontSize: theme.typography['Typography']['body2'].fontSize,
-  letterSpacing: theme.typography['Typography']['body2'].letterSpacing,
-  lineHeight: theme.typography['Typography']['body2'].lineHeight,
-  textDecoration: theme.typography['Typography']['body2'].textDecoration,
-  textTransform: theme.typography['Typography']['body2'].textTransform,
+  fontStyle: theme.typography['Typography']['body1'].fontStyle,
+  fontFamily: theme.typography['Typography']['body1'].fontFamily,
+  fontWeight: theme.typography['Typography']['body1'].fontWeight,
+  fontSize: theme.typography['Typography']['body1'].fontSize,
+  letterSpacing: theme.typography['Typography']['body1'].letterSpacing,
+  lineHeight: theme.typography['Typography']['body1'].lineHeight,
+  textDecoration: theme.typography['Typography']['body1'].textDecoration,
+  textTransform: theme.typography['Typography']['body1'].textTransform,
   alignSelf: `stretch`,
   margin: `0px`,
 }));
@@ -544,11 +634,11 @@ const Button2: any = styled(Button)(({ theme }: any) => ({
 
 const DividerHorizontal2: any = styled(Divider)(({ theme }: any) => ({
   alignSelf: `stretch`,
+  height: `1px`,
   margin: `0px`,
 }));
 
-const InvestorContent: any = styled('div')(({ theme }: any) => ({
-  backgroundColor: theme.palette['colors']['grey']['50'],
+const InvestorContent: any = styled('div')({
   borderRadius: `0px 0px 6px 0px`,
   display: `flex`,
   position: `relative`,
@@ -561,7 +651,7 @@ const InvestorContent: any = styled('div')(({ theme }: any) => ({
   alignSelf: `stretch`,
   flex: `1`,
   margin: `0px`,
-}));
+});
 
 const Button3: any = styled(Button)(({ theme }: any) => ({
   margin: `0px`,
@@ -580,14 +670,11 @@ const Button3: any = styled(Button)(({ theme }: any) => ({
 function EntityContainer(props: EntityContainerProps): JSX.Element {
   return (
     <EntityContainer1 className={props.className}>
-      <Helmet>
-        <title>EntityContainer</title>
-      </Helmet>
       <Content>
         <ProfileContainer>
           <ProfileContainerHead>
             <Content1>
-              <Header>{`Entity`}</Header>
+              <Entity>{`Entity`}</Entity>
               {false && <Subheader>{`{Subheader}`}</Subheader>}
             </Content1>
             <Button1
@@ -602,16 +689,46 @@ function EntityContainer(props: EntityContainerProps): JSX.Element {
           <DividerHorizontal orientation="horizontal" />
           <ProfileContent>
             <ProfileContentHeader>
-              <Typography1 variant={'body1'} gutterBottom={false}>
-                {`{AccountNameValue}`}
-              </Typography1>
+              <EntityName variant={'body1'} gutterBottom={false}>
+                {'XYZ Corporation'}
+              </EntityName>
               <Avatar1 sx={{ width: 40, height: 40 }} variant={'circular'}>
-                {'OP'}
+                {'XC'}
               </Avatar1>
-              <Typography2 variant={'body1'} gutterBottom={false}>
-                {`{Value}`}
-              </Typography2>
+              <Frame1>
+                <Typography1 variant={'body1'} gutterBottom={false}>
+                  {'Entity type:'}
+                </Typography1>
+                <Typography2 variant={'body1'} gutterBottom={false}>
+                  {'S Corporation'}
+                </Typography2>
+              </Frame1>
             </ProfileContentHeader>
+            <Tags>
+              <Frame2>
+                <Chip1
+                  label={'Accredited'}
+                  size={'medium'}
+                  color={'default'}
+                  disabled={false}
+                  variant={'filled'}
+                />
+                <Chip2
+                  label={'Domestic'}
+                  size={'medium'}
+                  color={'default'}
+                  disabled={false}
+                  variant={'filled'}
+                />
+              </Frame2>
+              <Chip3
+                label={'Control Person Exempt'}
+                size={'medium'}
+                color={'default'}
+                disabled={false}
+                variant={'filled'}
+              />
+            </Tags>
             <InfoTable1 />
           </ProfileContent>
         </ProfileContainer>
@@ -631,7 +748,7 @@ function EntityContainer(props: EntityContainerProps): JSX.Element {
               </IconButton1>
             </AvatarWrapper>
             <Text>
-              <Header1>{`Add Entity`}</Header1>
+              <Header>{`Add Entity`}</Header>
               {false && <Subheader1>{`{Subheader}`}</Subheader1>}
             </Text>
             {false && (
@@ -659,8 +776,16 @@ function EntityContainer(props: EntityContainerProps): JSX.Element {
                     <Typography3 variant={'body1'} gutterBottom={false}>
                       {'Tax'}
                     </Typography3>
-                    <Skeleton1 variant={'rectangle'} width={370} height={30} />
-                    <Skeleton2 variant={'rectangle'} width={370} height={30} />
+                    <Skeleton1
+                      variant={'rectangle'}
+                      width={369.56}
+                      height={30}
+                    />
+                    <Skeleton2
+                      variant={'rectangle'}
+                      width={369.56}
+                      height={30}
+                    />
                     <Skeleton3 variant={'rectangle'} width={160} height={30} />
                   </Stack1>
                 </CardContent2>
@@ -672,7 +797,9 @@ function EntityContainer(props: EntityContainerProps): JSX.Element {
         <InvestorContainer>
           <InvestorContainerHea>
             <Content2>
-              <Header2>{`Individual Investors`}</Header2>
+              <IndividualInvestors>
+                {`Individual Investors`}
+              </IndividualInvestors>
               {false && <Subheader2>{`{Subheader}`}</Subheader2>}
             </Content2>
             {false && (
