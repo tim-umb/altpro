@@ -232,8 +232,6 @@ function EntityForm(props: EntityFormProps): JSX.Element {
         disabled={false}
         size={'small'}
         label={'Account Name'}
-        onChange={fns.onAccountNameChange}
-        initialValue={props.accountNameInitialValue}
       />
       <Select1
         onChange={fns.onEntityTypeChange}
@@ -242,7 +240,7 @@ function EntityForm(props: EntityFormProps): JSX.Element {
         disabled={false}
       >
         <InputLabel>{'Entity Type'}</InputLabel>
-        <Select label={'Entity Type'} value={props.entityTypeValue}>
+        <Select>
           {data.entityType.map((item, index) => (
             <MenuItem key={index} value={item.value}>
               {item.text}
