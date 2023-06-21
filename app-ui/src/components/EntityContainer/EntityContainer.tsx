@@ -29,8 +29,9 @@ import {
 import CloseIcon from '@mui/icons-material/Close';
 import StarIcon from '@mui/icons-material/Star';
 import AddIcon from '@mui/icons-material/Add';
+import { Helmet } from 'react-helmet-async';
 import { styled } from '@mui/material/styles';
-import EntityInfoTable from 'src/components/EntityInfoTable/EntityInfoTable';
+import InfoTable from 'src/components/InfoTable/InfoTable';
 import EntityForm from 'src/components/EntityForm/EntityForm';
 import { EntityContainerProps } from 'src/types';
 
@@ -231,14 +232,14 @@ const Frame1: any = styled('div')({
 const Typography1: any = styled(Typography)(({ theme }: any) => ({
   margin: `0px`,
   color: theme.palette['text']['primary'],
-  fontStyle: `normal`,
-  fontFamily: `Roboto`,
-  fontWeight: `500`,
-  fontSize: `14px`,
-  letterSpacing: `0.17000000178813934px`,
-  textDecoration: `none`,
-  lineHeight: `24px`,
-  textTransform: `uppercase`,
+  fontStyle: theme.typography['Typography']['h6'].fontStyle,
+  fontFamily: theme.typography['Typography']['h6'].fontFamily,
+  fontWeight: theme.typography['Typography']['h6'].fontWeight,
+  fontSize: theme.typography['Typography']['h6'].fontSize,
+  letterSpacing: theme.typography['Typography']['h6'].letterSpacing,
+  lineHeight: theme.typography['Typography']['h6'].lineHeight,
+  textDecoration: theme.typography['Typography']['h6'].textDecoration,
+  textTransform: theme.typography['Typography']['h6'].textTransform,
 }));
 
 const Typography2: any = styled(Typography)(({ theme }: any) => ({
@@ -282,43 +283,43 @@ const Frame2: any = styled('div')({
 const Chip1: any = styled(Chip)(({ theme }: any) => ({
   margin: `0px`,
   color: theme.palette['text']['secondary'],
-  fontStyle: `normal`,
-  fontFamily: `Roboto`,
-  fontWeight: `400`,
-  fontSize: `13px`,
-  letterSpacing: `0.1599999964237213px`,
-  textDecoration: `none`,
-  lineHeight: `18px`,
-  textTransform: `none`,
+  fontStyle: theme.typography['Components']['chip-label'].fontStyle,
+  fontFamily: theme.typography['Components']['chip-label'].fontFamily,
+  fontWeight: theme.typography['Components']['chip-label'].fontWeight,
+  fontSize: theme.typography['Components']['chip-label'].fontSize,
+  letterSpacing: theme.typography['Components']['chip-label'].letterSpacing,
+  lineHeight: theme.typography['Components']['chip-label'].lineHeight,
+  textDecoration: theme.typography['Components']['chip-label'].textDecoration,
+  textTransform: theme.typography['Components']['chip-label'].textTransform,
 }));
 
 const Chip2: any = styled(Chip)(({ theme }: any) => ({
   margin: `0px 0px 0px 8px`,
   color: theme.palette['text']['secondary'],
-  fontStyle: `normal`,
-  fontFamily: `Roboto`,
-  fontWeight: `400`,
-  fontSize: `13px`,
-  letterSpacing: `0.1599999964237213px`,
-  textDecoration: `none`,
-  lineHeight: `18px`,
-  textTransform: `none`,
+  fontStyle: theme.typography['Components']['chip-label'].fontStyle,
+  fontFamily: theme.typography['Components']['chip-label'].fontFamily,
+  fontWeight: theme.typography['Components']['chip-label'].fontWeight,
+  fontSize: theme.typography['Components']['chip-label'].fontSize,
+  letterSpacing: theme.typography['Components']['chip-label'].letterSpacing,
+  lineHeight: theme.typography['Components']['chip-label'].lineHeight,
+  textDecoration: theme.typography['Components']['chip-label'].textDecoration,
+  textTransform: theme.typography['Components']['chip-label'].textTransform,
 }));
 
 const Chip3: any = styled(Chip)(({ theme }: any) => ({
   margin: `8px 0px 0px 0px`,
   color: theme.palette['text']['secondary'],
-  fontStyle: `normal`,
-  fontFamily: `Roboto`,
-  fontWeight: `400`,
-  fontSize: `13px`,
-  letterSpacing: `0.1599999964237213px`,
-  textDecoration: `none`,
-  lineHeight: `18px`,
-  textTransform: `none`,
+  fontStyle: theme.typography['Components']['chip-label'].fontStyle,
+  fontFamily: theme.typography['Components']['chip-label'].fontFamily,
+  fontWeight: theme.typography['Components']['chip-label'].fontWeight,
+  fontSize: theme.typography['Components']['chip-label'].fontSize,
+  letterSpacing: theme.typography['Components']['chip-label'].letterSpacing,
+  lineHeight: theme.typography['Components']['chip-label'].lineHeight,
+  textDecoration: theme.typography['Components']['chip-label'].textDecoration,
+  textTransform: theme.typography['Components']['chip-label'].textTransform,
 }));
 
-const InfoTable1: any = styled(EntityInfoTable)(({ theme }: any) => ({
+const InfoTable1: any = styled(InfoTable)(({ theme }: any) => ({
   alignSelf: `stretch`,
   margin: `16px 0px 0px 0px`,
 }));
@@ -670,6 +671,9 @@ const Button3: any = styled(Button)(({ theme }: any) => ({
 function EntityContainer(props: EntityContainerProps): JSX.Element {
   return (
     <EntityContainer1 className={props.className}>
+      <Helmet>
+        <title>EntityContainer</title>
+      </Helmet>
       <Content>
         <ProfileContainer>
           <ProfileContainerHead>

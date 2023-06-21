@@ -56,14 +56,14 @@ const Title: any = styled('div')({
 const Typography1: any = styled(Typography)(({ theme }: any) => ({
   margin: `0px`,
   color: theme.palette['text']['secondary'],
-  fontStyle: theme.typography['Typography']['h4'].fontStyle,
-  fontFamily: theme.typography['Typography']['h4'].fontFamily,
-  fontWeight: theme.typography['Typography']['h4'].fontWeight,
-  fontSize: theme.typography['Typography']['h4'].fontSize,
-  letterSpacing: theme.typography['Typography']['h4'].letterSpacing,
-  lineHeight: theme.typography['Typography']['h4'].lineHeight,
-  textDecoration: theme.typography['Typography']['h4'].textDecoration,
-  textTransform: theme.typography['Typography']['h4'].textTransform,
+  fontStyle: theme.typography['Typography']['h5'].fontStyle,
+  fontFamily: theme.typography['Typography']['h5'].fontFamily,
+  fontWeight: theme.typography['Typography']['h5'].fontWeight,
+  fontSize: theme.typography['Typography']['h5'].fontSize,
+  letterSpacing: theme.typography['Typography']['h5'].letterSpacing,
+  lineHeight: theme.typography['Typography']['h5'].lineHeight,
+  textDecoration: theme.typography['Typography']['h5'].textDecoration,
+  textTransform: theme.typography['Typography']['h5'].textTransform,
 }));
 
 const TextField1: any = styled(TextField)(({ theme }: any) => ({
@@ -218,7 +218,7 @@ const TextField3: any = styled(TextField)(({ theme }: any) => ({
 }));
 
 function EntityForm(props: EntityFormProps): JSX.Element {
-  const { data } = useEntityForm();
+  const { data, fns } = useEntityForm();
 
   return (
     <EntityForm1 className={props.className}>
@@ -232,10 +232,17 @@ function EntityForm(props: EntityFormProps): JSX.Element {
         disabled={false}
         size={'small'}
         label={'Account Name'}
+        onChange={fns.onAccountNameChange}
+        initialValue={props.accountNameInitialValue}
       />
-      <Select1 variant={'outlined'} size={'small'} disabled={false}>
+      <Select1
+        onChange={fns.onEntityTypeChange}
+        variant={'outlined'}
+        size={'small'}
+        disabled={false}
+      >
         <InputLabel>{'Entity Type'}</InputLabel>
-        <Select label={'Entity Type'}>
+        <Select label={'Entity Type'} value={props.entityTypeValue}>
           {data.entityType.map((item, index) => (
             <MenuItem key={index} value={item.value}>
               {item.text}

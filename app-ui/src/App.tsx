@@ -3,7 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import { ThemeProvider, StyledEngineProvider } from '@mui/material/styles';
 import questTheme from 'src/DesignSystemLightTheme';
-import EntityContainer from 'src/components/EntityContainer/EntityContainer';
+import EntityContainerAnimateState from 'src/components/EntityContainerAnimateState/EntityContainerAnimateState';
 
 function App() {
   return (
@@ -11,7 +11,7 @@ function App() {
       <StyledEngineProvider injectFirst>
         <ThemeProvider theme={questTheme}>
           <Routes>
-            <Route path="/" element={<EntityContainer />} />
+            <Route path="/" element={<EntityContainerAnimateState />} />
           </Routes>
         </ThemeProvider>
       </StyledEngineProvider>

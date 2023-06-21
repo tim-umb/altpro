@@ -19,6 +19,8 @@ type FormEntityData = {
 }
 
 const useEntityForm = () => {
+  const onEntityTypeChange = (): any => {};
+  const onAccountNameChange = (): any => {};
   let data: FormEntityData = {
     entityType: [
       { value: 'person', text: 'Person' },
@@ -27,7 +29,7 @@ const useEntityForm = () => {
     ]
   };
 
-  const fns: any = {};
+  const fns: any = {onEntityTypeChange, onAccountNameChange};
 
   return { data, fns };
 };
