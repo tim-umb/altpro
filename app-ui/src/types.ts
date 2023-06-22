@@ -19,9 +19,11 @@
 
 
 
+
 export interface EntityContainerAnimateStateProps {
   className?: any;
 };
+
 
 
 
@@ -35,9 +37,11 @@ export interface EntityContainerProps {
 
 
 
+
 export interface InfoTableProps {
   className?: any;
 }
+
 
 
 
